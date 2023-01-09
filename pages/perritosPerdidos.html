@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Huellitas | Perritos perdidos</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html"><img src="../img/logo.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="publicar.html">Publicar</a>
+                    <a href="perritosPerdidos.html">Perritos perdidos</a>
+                    <a href="#">Perritos encontrados</a>
+                    <a href="#">Iniciar sesion</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="#" class="btn"><button>Registrarse</button></a>
+    </header>
+    <main>
+        <div class="container-pPerdidos">
+            <section class="filter">
+                <div class="filter-caja">
+                    <div>
+                        <h2>Filtros</h2>
+                    </div>
+                    <div class="filter-caja-categorias">
+                        <div class="filter-categorias">
+                            <h3>Categorias</h3>
+                            <input type="radio" name="pEncontrados" id="pEncontrados">
+                            <label for="pEncontrados">Perritos encontrados</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pEncontrados" id="pPerdidos">
+                            <label for="pPerdidos">Perritos perdidos</label>
+                        </div>
+                    </div>
+                    <div class="filter-caja-categorias">
+                        <div>
+                            <h3>Sexo</h3>
+                            <input type="radio" name="pSexo" id="pSexoH">
+                            <label for="pSexoH">Hembra</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pSexo" id="pSexoM">    
+                            <label for="pSexoM">Macho</label>
+                        </div>
+                    </div>
+                    <div class="filter-caja-categorias">
+                        <div>
+                            <h3>Tamaño</h3>
+                            <input type="radio" name="pTamaño" id="pTamañoG">
+                            <label for="pTamañoG">Grande</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pTamaño" id="pTamañoM">
+                            <label for="pTamañoM">Mediano</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pTamaño" id="pTamañoP">
+                            <label for="pTamañoP">Pequeño</label>
+                        </div>
+                    </div>
+                    <div class="filter-caja-categorias-raza">
+                        <label for="pRaza">Raza</label>
+                        <div>
+                            <select name="pRaza" id="pRaza">
+                                <option value="-1" disabled selected>Seleccionar</option>
+                                <option value="0">Golden</option>
+                                <option value="1">Chihuaha</option>
+                                <option value="2">Dalmata</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-caja-datos">
+                        <div class="filter-caja-pedir-datos">
+                            <label for="departamento">Departamento</label>
+                            <div>
+                                <select name="departamento" id="departamento">
+                                    <option value="-1" disabled selected>Lima</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-caja-pedir-datos">
+                            <label for="provincia">Provincia</label>
+                            <div>
+                                <select name="provincia" id="provincia">
+                                    <option value="-1" disabled selected>Lima</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-caja-pedir-datos">
+                            <label for="distrito">Distrito</label>
+                            <div>
+                                <select name="distrito" id="distrito">
+                                    <option value="-1" disabled selected>Puente piedra</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-btn">
+                        <a href="#"><button class="publicar-btn">Buscar perritos</button></a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="apartado-perritos">
+                    <div class="titulo-caja">
+                        <div class="titulo-caja-migas">
+                            <h3>Home <span>></span> Publicaciones</h3>
+                        </div>
+                        <div class="titulo-perritos">
+                            <h1>Perritos Encontrados</h1>
+                            <h4>120 Encontrados</h4>
+                        </div>
+                    </div>
+                    <div class="aparatado-perritos-caja-card">
+                        <div class="apartado-perritos-caja-1">  
+                            <div class="card1">
+ 
+                            </div>
+                            <div class="card1"> 
+
+                            </div>
+                            <div class="card1">
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card2">
+
+                            </div>
+                            <div class="card2">
+
+                            </div>
+                            <div class="card2">
+
+                        </div>
+                        <div>
+                            <div class="card3">
+
+                            </div>
+                            <div class="card3">
+
+                            </div>
+                            <div class="card3">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="caja-paginacion">
+                    <span class="pagina-anterior"><</span>
+                    <button class="pagina-1">1</button> 
+                    <button class="pagina-2">2</button> 
+                    <button class="pagina-3">3</button>
+                    <button class="pagina-4">4</button> 
+                    <button class="pagina-5">5</button> 
+                    <span class="pagina-siguiente">></span>
+                </div>
+            </section>
+            <div class="caja-mapa">
+                <section class="mapa-encontrar">
+                    <div id="map"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script src="../js/carrousel.js"></script>
+    <!-- Api Maps -->
+    <script src="../js/maps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+    <!-- Font Awesome (Iconos) -->
+    <script src="https://kit.fontawesome.com/c8753d1bc8.js" crossorigin="anonymous"></script>
+</body>
+</html>

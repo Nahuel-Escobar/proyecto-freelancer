@@ -1,0 +1,1291 @@
+/* Estilos de Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans&display=swap');
+
+/*  
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif; 
+*/
+
+/* Reseteo Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Defino fuentes y tamaños */
+body {
+    font-size: 62.5%;
+    background: #F4F3F1;
+}
+
+/* Estilos para el header */
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 8vh;
+    margin: 16px 26px;
+}
+
+header .logo {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+header .logo img {
+    height: 18px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos a los links del navbar */
+
+header .nav-links {
+    list-style: none;
+}
+
+header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+header .nav-links a {
+    color: #2F2F2F;
+    margin: 0px 20px;
+    text-decoration: none;
+}
+
+/* Estilo al boton registrarse */
+
+header .btn button {
+    background: #F4F3F1;
+    color: #000000;
+    padding: 12px 24px;
+    border: 2px solid #2F2F2F;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+header .btn button:hover {
+    transform: scale(1.04);
+}
+
+/* editando el contenido de la pagina */
+/* Estilos al Titulo e imagen */
+main .contenedor-presentacion {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 36px 16px;
+    margin: 0 auto;
+    width: 95%;
+    height: 95%;
+}
+
+/* titulo */
+
+main section .titulo-texto {
+    margin: 20px 0px;
+    padding: 35px 0px;
+    text-align: center;
+}
+
+main section .titulo-texto h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 42px;
+    margin: 0 auto;
+    width: 75%;
+    height: 96px;
+    color: #2F2F2F;
+}
+
+/* subtitulo */
+main section .titulo-texto p {
+    width: 70%;
+    height: 48px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0 auto;
+    line-height: 22px;
+    color: #2F2F2F;
+}
+
+/* medidas de los botones de ayuda */
+main section .btn-ayuda {
+    margin: 14px 0px;
+}
+
+/* Boton 1 "Perdi mi perrito" */
+
+main section .btn-ayuda .btn-ayuda-1 {
+    width: 195px;
+    height: 48px;
+    padding: 12px 24px;
+    margin-right: 18px;
+    background: #FFF278;
+    border: 2px solid #2F2F2F;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+/* Boton 2 "Encontre un perrito" */
+
+main section .btn-ayuda .btn-ayuda-2 {
+    padding: 12px 24px;
+    width: 186px;
+    height: 48px;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+/* Imagen de presentacion */
+main .contenedor-presentacion .ilustracion img {
+    height: 325px;
+    width: auto;
+}
+
+/* Carousel "perritos encontrados" */
+
+main .carrousel h2 {
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    padding: 10px 40px;
+    margin: 40px 0px 32px 0px;
+    color: #2F2F2F;
+}
+.container {
+    margin: 0 auto;
+    padding: 10px 40px;
+}
+
+.container .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.container .swiper-slide {
+    position: relative;
+    text-align: start;
+    font-size: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+}
+
+.container .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.container .card-descripcion {
+    padding: 1rem;
+}
+
+.container .card-descripcion .card-title, .container .card-descripcion  .card-text {
+    margin-bottom: 0.5rem;
+} 
+
+.swiper-button-next {
+    background-color: white;
+    color: #000 !important;
+    border-radius: 50px;
+    height: 50px !important;
+    width: 50px !important;
+}
+
+.swiper-button-prev {
+    background-color: white;
+    border-radius: 50px;
+    color: #000 !important;
+    height: 50px !important;
+    width: 50px !important;
+}
+
+/* Banner "¿Encontro un perro?" */
+main .banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 80px;
+    background: #FADFC7;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+    border-radius: 24px;
+    width: 93.5%;
+    margin: 48px auto;
+}
+
+/* Añadiendo estilo a la caja de texto del banner*/
+main .banner .banner-text-box {
+    margin: 0px 50px;
+}
+
+/* Añadiendo estilos al h3 del banner */
+main .banner .banner-text-box .banner-text {
+    width: 518px;
+    height: 76px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 38px;
+    color: #2F2F2F;
+    margin: -30px 0px 20px 0px;
+}
+
+/* Añadiendo estilo al parrafo del banner */
+main .banner .banner-text-box .banner-parraf {
+    width: 518px;
+    height: 48px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+    margin: 10px 0px 20px 0px;
+
+}
+
+/* Añadiendole estilo al bottom */
+
+main .banner .banner-text-box .banner-btn {
+    padding: 15px 40px;
+    cursor: pointer;
+    background: #FADFC7;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+    border-radius: 24px;
+}
+
+main .banner .banner-text-box a {
+    width: 151px;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+    text-decoration: none;
+}
+
+/* Mapa del Home */
+/* Titulo */
+main .mapa h3 {
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    padding: 10px 40px;
+    margin: 40px 0px 32px 0px;
+    color: #2F2F2F;
+}
+
+/* Mapa */
+
+main .mapa #map {
+	height: 500px;
+	width: 93.5%;
+    margin: 0 auto;
+}
+
+/* Banner Enviar Email / Consulta */
+
+main .banner-email {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 93.5%;
+    padding: 40px 80px;
+    margin: 30px auto;
+    background: #C2E3EB;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+    border-radius: 24px;
+}
+
+/* Titulo de la caja de texto del banner email */
+main .banner-email .banner-email-text h3 {
+    width: 504px;
+    height: 76px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 38px;
+    color: #2F2F2F;
+}
+
+/* Descripcion de la caja de texto del banner email */
+main .banner-email .banner-email-text p {
+    width: 504px;
+    height: 48px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 20px 0px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+/* Caja de inputs email */
+main .banner-email .banner-email-text input {
+    padding: 8px 8px 8px 24px;
+    border: none;
+    width: 504px;
+    height: 64px;
+    background: #FFFFFF;
+    border-radius: 24px;
+}
+
+/*Boton enviar */
+main .banner-email .banner-email-text .send {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px auto;
+    padding: 12px 24px;
+    width: 138px;
+    height: 48px;
+    background: #FFF278;
+    border: 2px solid #000000;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+/* Footer del Home */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 54px 76px;
+}
+
+/* Copyright y Logo */
+footer .copyright {
+    margin-left: -30px;
+    width: 176px;
+}
+
+footer .copyright .logo {
+    margin-bottom: 30px;
+}
+
+footer .copyright h3 {
+    width: 155px;
+    height: 48px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+footer .copyright i {
+    font-size: 1.5rem;
+    color: #2F2F2F;
+    padding: 5px 15px 0px 0px;
+}
+
+/* El corazoncito */
+footer .copyright span {
+    color: red;
+}
+
+/* Apartado Publicar */
+
+footer .publicar h2{
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+footer .publicar p {
+    margin-top: 10px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+/* Apartado Publicaciones */
+
+footer .publicaciones h2 {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+footer .publicaciones p {
+    margin-top: 10px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+/* Apartado Sobre Huellas */
+
+footer .aboutUs h2 {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+footer .aboutUs p {
+    margin-top: 10px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+/* Apartado Términos legales */
+
+footer .legal h2 {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+footer .legal p {
+    margin-top: 10px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+/* **************************************************** ****************************************************/
+
+/* Apartado "Publicar" */
+
+/* Etiqueta de la página */
+main .publicar-titulo h3, main .publicar-titulo-2 h3, main .publicar-titulo-3 h3 {
+    font-family: 'Nunito Sans', sans-serif; 
+    font-weight: 400;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 48px;
+}
+
+main section h3 span {
+    font-weight: 700;
+    margin: 0px 10px;
+}
+
+/* Caja de de publicar de todas las cajas */
+
+main .publica, .publica-2, .publica-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 838px;
+    position: absolute;
+    top: 450px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* Imagen de apartado Publica */
+main .publica img {
+    width: 657px;
+    height: 838px;
+    border-radius: 24px 0px 0px 24px;
+}
+
+/* apartado de la derecha de publicar de todas las cajas*/
+main .publica .publica-caja, main .publica-2 .publica-caja, main .publica-3 .publica-caja{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    width: 484px;
+    height: 838px;
+    background: #FFFFFF;
+    border-radius: 0px 24px 24px 0px;
+}
+
+main .publica .publica-caja .publica-texto, main .publica-2 .publica-caja .publica-texto, main .publica-3 .publica-caja .publica-texto{
+    width: 100%;
+}
+
+/* Textos y botones TODAS las caja a publicar */
+main .publica .publica-caja .publica-texto .publicar-btn, main .publica-2 .publica-caja .publica-texto .publicar-btn,  main .publica-3 .publica-caja .publica-texto .publicar-btn{
+    width: 40px;
+    height: 40px;
+    margin: 0px 30px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+}
+
+main .publica .publica-caja .publica-texto .active, main .publica-2 .publica-caja .publica-texto .active, main .publica-3 .publica-caja .publica-texto .active{
+    background: #FFA078;
+
+}
+
+main .publica .publica-caja .publica-texto span, main .publica-2 .publica-caja .publica-texto span, main .publica-3 .publica-caja .publica-texto span  {
+    margin-left: -25px;
+    font-size: 1rem;
+}
+
+main .publica .publica-caja .publica-texto p, main .publica-2 .publica-caja .publica-texto p, main .publica-3 .publica-caja .publica-texto p{
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #B1B8BE;
+    margin: 30px 30px 10px 25px;
+}
+
+main .publica .publica-caja .publica-texto h2, main .publica-2 .publica-caja .publica-texto h2, main .publica-3 .publica-caja .publica-texto h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+    margin: 30px 30px 10px 30px;
+}
+
+/* Texto de la parte de abajo de la caja de publicar */
+main .publica .publica-caja .publica-texto-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    height: 232px;
+}
+
+main .publica .publica-caja .publica-texto-2 .texto-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    height: 160px;
+    
+}
+
+main .publica .publica-caja .publica-texto-2 h2 {
+    height: 96px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+main .publica .publica-caja .publica-texto-2 p {
+    height: 48px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+/* Customizando los botonos de la primera pagina de publicar*/
+main .publica .publica-caja .publica-texto-2 .btn-publicar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 377px;
+    height: 48px;
+}
+
+
+main .publica .publica-caja .publica-texto-2 .btn-publicar a{
+    text-decoration: none;
+}
+
+main .publica .publica-caja .publica-texto-2 .btn-publicar .perder-btn {
+    box-sizing: border-box;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 166px;
+    height: 48px;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+main .publica .publica-caja .publica-texto-2 .btn-publicar .encontrar-btn {
+    box-sizing: border-box;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 195px;
+    height: 48px;
+    background: #FFF278;
+    border: 2px solid #2F2F2F;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+/* **************************************************** ****************************************************/
+/* Estilos de la Segunda Caja del Apartado Publicar! */
+
+/* Desaparecemos la caja para que con js la hagamos aparecer */
+main .publica-2 {
+    display: none;
+}
+
+/* Le damos más altura */
+main .publica-2 .publica-caja {
+    height: 1358px;
+}
+
+/* Acomodamos detalles */
+main .publica-2 .publica-caja .publica-texto h2{
+    margin: 5px 30px 10px 25px;
+}
+
+/* Personalizamos toda la caja 2 */
+main .publica-2 .publica-caja .publica-texto h3{
+    font-family: 'Nunito Sans';
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2F2F2F;
+    margin: 45px 30px 10px 25px;
+}
+
+main .publica-2 .publica-caja .publica-texto .texto-img{
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    align-items: center;
+    text-align: center;
+    color: #2F2F2F;
+    justify-content: center;
+}
+
+main .publica-2 .publica-caja .publica-texto input {
+    display: block;
+    margin: auto;
+    padding: 0px 0px 70px 0px;
+}
+
+/* Personalizo el mapa */
+main .publica-2 .datos-ubicacion h2{
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+}
+
+main .datos-mapa #map {
+	height: 250px;
+    border-radius: 15px;
+}
+
+/* Personalizando Datos de formulario */
+main .publica-2 .publica-caja .publica-texto .datos-formulario form div .descripcion {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+    margin: 20px 0px 10px 0px;
+
+}
+
+main .publica-2 .publica-caja .publica-texto .datos-formulario form div textarea {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+    width: 100%;
+    height: 175px;
+    border: 1px solid #B1B8BE;
+    border-radius: 24px;
+}
+
+/* Personalizo caja de select */
+main .publica-2 .publica-caja .publica-texto .datos-formulario form .select {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "select1 select1"
+    "select2 select2"
+    ;
+}
+
+/* Le doy estilo a la caja */
+main .publica-2 .publica-caja .publica-texto .datos-formulario form label{
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+    margin-top: 10px;
+}
+
+main .publica-2 .publica-caja .publica-texto .datos-formulario form select {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    width: 200px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+main .publica-2 .publica-caja .publica-texto .datos-formulario form .fecha{
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    width: 200px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+/* Customizando el boton enviar  */
+main .publica-2 .publica-caja .publica-texto .datos-formulario button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 40px;
+    width: 100%;
+    height: 56px;
+    margin: 0 auto;
+    margin-top: 90px;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    border-radius: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* **************************************************** ****************************************************/
+/* Estilo de la terce Caja del apartado publicar */
+
+main .publica-3 {
+    display: none;
+}
+
+main .publica-3 .publica-texto .contacto-publicar form .datos-caja{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "datos datos"
+    "datos2 datos2"
+    ;
+    margin: 45px 0px 0px 30px;
+}
+
+main .publica-3 .publica-texto .contacto-publicar form .datos-caja .primeros-datos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 26px;
+    height: 160px;
+}
+
+main .publica-3 .publica-texto .contacto-publicar form .datos-caja .primeros-datos .datos-caja-1, .datos-caja-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    height: 72px;
+}
+
+main .publica-3 .publica-texto .contacto-publicar form .datos-caja label {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main .publica-3 .publica-texto .contacto-publicar form .datos-caja input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+}
+
+/* Personalizando texto del inferior de la caja */
+
+main .publica-3 .publica-caja .caja-boton-enviar{
+    width: 100%;
+    text-align: center;
+    margin-top: 50%;
+}
+
+main .publica-3 .publica-caja .caja-boton-enviar h3 {
+    font-family: 'Nunito Sans';
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 24px;
+    margin: 20px auto;
+    color: #B1B8BE;
+}
+
+main .publica-3 .publica-caja .caja-boton-enviar button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 40px;
+    gap: 10px;
+    width: 100%;
+    height: 56px;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+/* **************************************************** ****************************************************/
+/* Apartado de Perritos Perdidos */
+
+/* Estilo caja Filter */
+main .container-pPerdidos {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-row: auto;
+    margin: 10px;
+}
+
+main .container-pPerdidos .filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+    border-radius: 24px;
+}
+
+main .container-pPerdidos .filter-caja  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+    width: 318px;
+    height: 100%;
+}
+
+/* Estilo titulo de caja filter*/
+
+main .container-pPerdidos .filter-caja div h2 {
+    width: 270px;
+    height: 28px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+/* Estilo selects y labels de las categorias */
+
+main .container-pPerdidos .filter-caja div h3 {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+    margin: 10px 0px;
+}
+
+main .container-pPerdidos .filter-caja .filter-caja-categorias {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+}
+
+main .container-pPerdidos .filter-caja .filter-caja-categorias input {
+    width: 18px;
+    height: 18px;
+    background: #FFA078;
+}
+
+main .container-pPerdidos .filter-caja .filter-caja-categorias label {
+    user-select: none;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2F2F2F;
+    margin: 0px 10px;
+}
+
+/* Select de categoria de Razas */
+
+main .container-pPerdidos .filter-caja .filter-caja-categorias-raza {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 270px;
+    height: 72px;
+}
+
+main .container-pPerdidos .filter-caja .filter-caja-categorias-raza label {
+    width: 270px;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main .container-pPerdidos .filter-caja .filter-caja-categorias-raza select {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 270px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+/* Apartado de las cajas donde se piden los datos */
+main .container-pPerdidos .filter-caja-datos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 270px;
+    height: 240px;
+}
+
+main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 270px;
+    height: 72px;
+}
+
+main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos label {
+    width: 270px;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos select {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 270px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+
+}
+/* Boton de continuar de la caja de filtros */
+main  .container-pPerdidos .filter-caja .filter-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 10px;
+    width: 100%;
+    height: 96px;
+}
+
+main .container-pPerdidos .filter-caja .filter-btn  button{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    height: 48px;
+    width: 100%;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+main .container-pPerdidos .filter-caja .filter-btn a {
+    width: 222px;
+    height: 24px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #2F2F2F;
+    text-decoration: none;
+}
+
+/* **************************************************** ****************************************************/
+/* Parte main de la pagina perdidos */
+
+main section .apartado-perritos {
+    margin: 0px 10px;
+}
+main section .apartado-perritos .titulo-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin: 16px 0px;
+}
+
+main section .apartado-perritos .titulo-caja .titulo-caja-migas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 0px;
+    gap: 16px;
+    height: 56px;
+}
+
+main section .apartado-perritos .titulo-caja .titulo-caja-migas h3 {
+    width: 44px;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .apartado-perritos .titulo-caja .titulo-caja-migas span {
+    width: 24px;
+    height: 24px;
+}
+
+main section .apartado-perritos .titulo-caja .titulo-perritos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 16px;
+    height: 38px;
+    width: 100%;
+}
+
+main section .apartado-perritos .titulo-caja .titulo-perritos h1{
+    width: 90%;
+    height: 38px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .apartado-perritos .titulo-caja .titulo-perritos h4 {
+    width: 25%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+/* **************************************************** ****************************************************/
+/* Apartado de "galeria" de cards */
+
+main section .apartado-perritos .aparatado-perritos-caja-card {
+    width: 100%;
+    background-color: lightgreen;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;  
+}
+
+/* Apartado paginacion de las cards */
+
+main section .caja-paginacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    height: 40px;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+}
+
+main section .caja-paginacion .pagina-anterior, .pagina-siguiente {
+    color: #2F2F2F;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+main section .caja-paginacion .pagina-1, .pagina-2, .pagina-3, .pagina-4, .pagina-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 10px;
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* **************************************************** ****************************************************/
+
+
+/* Aparatado de Maps */
+main .caja-mapa {
+    margin: 50px 10px;
+}
+main .mapa-encontrar #map {
+	height: 600px;
+	width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+}
