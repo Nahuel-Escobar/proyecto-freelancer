@@ -5,58 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome (iconos)-->
+    <script src="https://kit.fontawesome.com/2c1892ead4.js" crossorigin="anonymous"></script>
     <title>Huellitas | Publicar</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="../index.html"><img src="../img/logo.png" alt="Logo"></a>
-        </div>
         <nav>
-            <ul class="nav-links">
-                <li>
-                    <a href="publicar.html">Publicar</a>
-                    <a href="perritosPerdidos.html">Perritos perdidos</a>
-                    <a href="#">Perritos encontrados</a>
-                    <a href="#">Iniciar sesion</a>
-                </li>
+            <div>
+                <a href="../index.html"><img src="../img/logo.png" alt="Logo" class="logo"></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn"><i class="fa-solid fa-bars"></i></label>
+            <ul class="nav-menu">
+                <li><a href="publicar.html">Publicar</a></li>
+                <li><a href="perritosPerdidos.html">Perritos perdidos</a></li>
+                <li><a href="perritoEncontrado.html">Perritos encontrados</a></li>
+                <li><a href="iniciarSesion.html">Iniciar sesion</a></li>
+                <li><a href="register.html" class="register-nav">Registrate</a></li>
             </ul>
         </nav>
-        <a href="#" class="btn"><button>Registrarse</button></a>
     </header>
     <main>
         <!-- Primer aparatado de las cajas de Publicar -->
         <section class="publicar-titulo">
             <h3>Home <span>></span> Publicar anuncio</h3>
         </section>
-        <section class="publica">
-            <img src="../img/banner-publicar.png" alt="banner">
-            <div class="publica-caja">
-                <div class="publica-texto">
-                    <div>
-                        <button class="active publicar-btn">1</button> <span>Elige</span>
-                        <button class="publicar-btn">2</button> <span>Describe</span>
-                        <button class="publicar-btn">3</button> <span>Publica</span>
+        <div>
+        <div class="grid-container-publicar">
+            <section class="caja-img">
+                <img src="../img/banner-publicar.png" alt="banner">
+            </section>
+            <section class="publica">
+                    <div class="publica-texto">
+                        <div>
+                            <button class="active publicar-btn">1</button> <span>Elige</span>
+                            <button class="publicar-btn">2</button> <span>Describe</span>
+                            <button class="publicar-btn">3</button> <span>Publica</span>
+                        </div>
+                        <p>Paso 1/3</p>
+                        <h2>Elige la situación</h2>
                     </div>
-                    <p>Paso 1/3</p>
-                    <h2>Elige la situación</h2>
+                    <div class="publica-texto-2">
+                        <div class="texto-2">
+                            <h2>Publica un anuncio y súmate a la causa</h2>
+                            <p>¿Perdiste o encontraste una mascota? Estamos para ayudarte, publica un anuncio sin costo.</p>
+                        </div>
+                        <div class="btn-publicar">
+                            <button class="perder-btn" onclick="myFunction(1)">Perdí mi perrito</button>
+                            <button class="encontrar-btn" onclick="myFunction(1)">Encontre un perrito</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="publica-texto-2">
-                    <div class="texto-2">
-                        <h2>Publica un anuncio y súmate a la causa</h2>
-                        <p>¿Perdiste o encontraste una mascota? Estamos para ayudarte, publica un anuncio sin costo.</p>
-                    </div>
-                    <div class="btn-publicar">
-                        <button class="perder-btn" onclick="myFunction(1)">Perdí mi perrito</button>
-                        <button class="encontrar-btn" onclick="myFunction(1)">Encontre un perrito</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Apartado 2 de Publicar -->
-        <section class="publica-2">
-            <img src="../img/banner-publicar.png" alt="banner">
-            <div class="publica-caja">
+            </section>
+        <div>
+        <div class="grid-container-publicar-2">
+            <!-- Apartado 2 de Publicar -->
+            <section class="caja-img-2">
+                <img src="../img/banner-publicar.png" alt="banner">
+            </section>
+            <section class="publica-2">
                 <div class="publica-texto">
                     <div>
                         <button class="publicar-btn">1</button> <span>Elige</span>
@@ -155,12 +163,14 @@
                         <button class="publicar-btn" onclick="myFunction(2)">Continuar</button>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Tercer y ultimo apartado de Publicar -->
-        <section class="publica-3">
-            <img src="../img/banner-publicar.png" alt="banner">
-            <div class="publica-caja">
+            </section>
+        </div>
+        <div class="grid-container-publicar-3">
+            <!-- Tercer y ultimo apartado de Publicar -->
+            <section class="caja-img-3">
+                <img src="../img/banner-publicar.png" alt="banner">
+            </section>
+            <section class="publica-3">
                 <div class="publica-texto">
                     <div>
                         <button class="publicar-btn">1</button> <span>Elige</span>
@@ -195,13 +205,13 @@
                             </div>
                         </form>
                     </div>
+                    <div class="caja-boton-enviar">
+                        <h3>Al publicar, usted esta de acuerdo con los terminos y condiciones </h3>
+                        <button class="publicar-btn-2 enviar" onclick="myFunction(3)">Publicar</button>
+                    </div>
                 </div>
-                <div class="caja-boton-enviar">
-                    <h3>Al publicar, usted esta de acuerdo con los terminos y condiciones </h3>
-                    <button class="publicar-btn enviar" onclick="myFunction(3)">Publicar</button>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     <!-- Main Js -->
     <script src="../js/main.js"></script>

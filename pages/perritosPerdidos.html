@@ -5,29 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome (iconos)-->
+    <script src="https://kit.fontawesome.com/2c1892ead4.js" crossorigin="anonymous"></script>
     <title>Huellitas | Perritos perdidos</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="../index.html"><img src="../img/logo.png" alt="Logo"></a>
-        </div>
         <nav>
-            <ul class="nav-links">
-                <li>
-                    <a href="publicar.html">Publicar</a>
-                    <a href="perritosPerdidos.html">Perritos perdidos</a>
-                    <a href="#">Perritos encontrados</a>
-                    <a href="#">Iniciar sesion</a>
-                </li>
+            <div>
+                <a href="../index.html"><img src="../img/logo.png" alt="Logo" class="logo"></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn"><i class="fa-solid fa-bars"></i></label>
+            <ul class="nav-menu">
+                <li><a href="publicar.html">Publicar</a></li>
+                <li><a href="perritosPerdidos.html">Perritos perdidos</a></li>
+                <li><a href="perritoEncontrado.html">Perritos encontrados</a></li>
+                <li><a href="iniciarSesion.html">Iniciar sesion</a></li>
+                <li><a href="register.html" class="register-nav">Registrate</a></li>
             </ul>
         </nav>
-        <a href="#" class="btn"><button>Registrarse</button></a>
     </header>
     <main>
+        </section>
         <div class="container-pPerdidos">
             <section class="filter">
                 <div class="filter-caja">
+                    <i class="fa-solid fa-xmark" onclick="ocultarFilter()"></i>
                     <div>
                         <h2>Filtros</h2>
                     </div>
@@ -70,7 +74,7 @@
                     </div>
                     <div class="filter-caja-categorias-raza">
                         <label for="pRaza">Raza</label>
-                        <div>
+                        <div class="pSelect">
                             <select name="pRaza" id="pRaza">
                                 <option value="-1" disabled selected>Seleccionar</option>
                                 <option value="0">Golden</option>
@@ -82,7 +86,7 @@
                     <div class="filter-caja-datos">
                         <div class="filter-caja-pedir-datos">
                             <label for="departamento">Departamento</label>
-                            <div>
+                            <div class="pSelect">
                                 <select name="departamento" id="departamento">
                                     <option value="-1" disabled selected>Lima</option>
                                 </select>
@@ -90,7 +94,7 @@
                         </div>
                         <div class="filter-caja-pedir-datos">
                             <label for="provincia">Provincia</label>
-                            <div>
+                            <div class="pSelect">
                                 <select name="provincia" id="provincia">
                                     <option value="-1" disabled selected>Lima</option>
                                 </select>
@@ -98,7 +102,7 @@
                         </div>
                         <div class="filter-caja-pedir-datos">
                             <label for="distrito">Distrito</label>
-                            <div>
+                            <div class="pSelect">
                                 <select name="distrito" id="distrito">
                                     <option value="-1" disabled selected>Puente piedra</option>
                                 </select>
@@ -110,7 +114,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="cards">
                 <div class="apartado-perritos">
                     <div class="titulo-caja">
                         <div class="titulo-caja-migas">
@@ -121,37 +125,82 @@
                             <h4>120 Encontrados</h4>
                         </div>
                     </div>
-                    <div class="aparatado-perritos-caja-card">
-                        <div class="apartado-perritos-caja-1">  
-                            <div class="card1">
- 
+                    <section>
+                        <div class="cajas-filtros-maps">
+                            <div class="caja-filtros" onclick="mostrarFilter()">
+                                <div class="caja-icono">
+                                    <i class="fa-regular fa-map"></i>
+                                </div>
+                                <h3>Mostrar Filtros</h3>
                             </div>
-                            <div class="card1"> 
-
-                            </div>
-                            <div class="card1">
-
+                            <div class="caja-maps" onclick="mostrarMap()">
+                                <i class="fa-solid fa-bars-staggered"></i>
+                                <h3>Mostrar Mapa</h3>
                             </div>
                         </div>
-                        <div>
-                            <div class="card2">
-
+                    <div class="apartado-perritos-caja-card">
+                        <!-- Seccion 1 -->
+                        <div class="card">
+                            <img src="../img/perrocarrousel-1.jpg" alt="perrito-1">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
                             </div>
-                            <div class="card2">
-
-                            </div>
-                            <div class="card2">
-
                         </div>
-                        <div>
-                            <div class="card3">
-
+                        <div class="card">
+                            <img src="../img/perrocarrousel-2.jpg" alt="perrito-2">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
                             </div>
-                            <div class="card3">
-
+                        </div>
+                        <div class="card">
+                            <img src="../img/perrocarrousel-3.jpg" alt="perrito-3">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
                             </div>
-                            <div class="card3">
-
+                        </div>
+                        <div class="card">
+                            <img src="../img/perrocarrousel-4.jpg" alt="perrito-4">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/perrocarrousel-2.jpg" alt="perrito-5">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/perrocarrousel-5.jpg" alt="perrito-6">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/perrocarrousel-5.jpg" alt="perrito-7">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/perrocarrousel-4.jpg" alt="perrito-8">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/perrocarrousel-2.jpg" alt="perrito-9">
+                            <div class="card-texts">
+                                <h3>Puente piedra</h3>
+                                <p>Urb. Porvenir 302</p>
                             </div>
                         </div>
                     </div>
@@ -166,13 +215,18 @@
                     <span class="pagina-siguiente">></span>
                 </div>
             </section>
-            <div class="caja-mapa">
-                <section class="mapa-encontrar">
-                    <div id="map"></div>
-                </section>
-            </div>
+            <section class="map"> 
+                <div class="caja-mapa">
+                    <section class="mapa-encontrar">
+                        <i class="fa-solid fa-xmark"onclick="ocultarMap()"></i>
+                        <div id="map"></div>
+                    </section>
+                </div>
+            </section>
         </div>
     </main>
+    <!-- Main Js -->
+    <script src="../js/main.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->

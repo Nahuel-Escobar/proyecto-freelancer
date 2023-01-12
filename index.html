@@ -8,27 +8,32 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- Font Awesome (iconos)-->
+    <script src="https://kit.fontawesome.com/2c1892ead4.js" crossorigin="anonymous"></script>
     <title>Huellitas | Inicio</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
-        </div>
         <nav>
-            <ul class="nav-links">
-                <li>
-                    <a href="pages/publicar.html">Publicar</a>
-                    <a href="pages/perritosPerdidos.html">Perritos perdidos</a>
-                    <a href="#">Perritos encontrados</a>
-                    <a href="#">Iniciar sesion</a>
-                </li>
+            <div>
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo"></a>   
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn"><i class="fa-solid fa-bars"></i></label>
+            <ul class="nav-menu">
+                <li><a href="pages/publicar.html">Publicar</a></li>
+                <li><a href="pages/perritosPerdidos.html">Perritos perdidos</a></li>
+                <li><a href="pages/perritoEncontrado.html">Perritos encontrados</a></li>
+                <li><a href="pages/iniciarSesion.html">Iniciar sesion</a></li>
+                <li><a href="pages/register.html" class="register-nav">Registrate</a></li>
             </ul>
         </nav>
-        <a href="#" class="btn"><button>Registrarse</button></a>
-    </header>
+        </header>
     <main>
         <section class="contenedor-presentacion">
+            <div class="ilustracion">
+                <img src="img/ilustracion.png" alt="ilustracion">
+            </div>
             <div class="titulo-texto">
                 <h1>Ayúdanos a reunirlos con sus seres queridos </h1>
                 <p>¿Perdiste o encontraste un perrito? Estamos para ayudarte, publica un anuncio sin costo</p>
@@ -37,11 +42,8 @@
                     <a href="pages/publicar.html"><button class="btn-ayuda-2">Encontré un perrito</button></a>
                 </div>  
             </div>
-            <div class="ilustracion">
-                <img src="img/ilustracion.png" alt="ilustracion">
-            </div>
         </section>
-    <!-- Carrusel de perritos encontrados -->
+        <!-- Carrusel de perritos encontrados -->
         <section class="carrousel">
             <h2>Perritos Encontrados</h2>
             <div class="container">
@@ -141,70 +143,76 @@
                 </div>
             </div>
         </section>
-    <!-- Banner Para ver perritos perdidos -->
-    <section class="banner">
-        <img src="img/banner.png" alt="banner">
-        <div class="banner-text-box">
-            <h3 class="banner-text">
-                ¿Concentrate un perrito y no localizas a su dueño?
-            </h3>
-            <p class="banner-parraf">
-                Busca en nuestra lista de perritos perdidos, quizá su dueño lo este buscando, no esperes más. 
-            </p>
-            <a href="#"><button class="banner-btn">Ver perritos perdidos</button></a>
-        </div>
-    </section>
-    <!-- Mapa de Busqueda -->
-    <section class="mapa">
-        <h3>Mapa de Busqueda</h3>
-        <div id="map"></div>
-    </section>
-    <!-- Banner para consultas -->
-    <section class="banner-email">
-        <div class="banner-email-text">
-            <h3>¿Tienes una consulta?, comunícate con nosotros</h3>
-            <p>En caso de dudas o sugerencias, escríbenos a hola@huellas.pe o déjanos tu correo y te contactaremos.</p>
-            <div>
-                <form action="/">
-                    <input type="email" name="email" id="email" placeholder="Ingresa tu email: ejemplo@gmail.com" required>
-                    <input type="submit" value="Enviar Ahora" class="send">
-                </form>
+        <!-- Banner Para ver perritos perdidos -->
+        <section class="banner">
+            <img src="img/banner.png" alt="banner" class="banner-img">
+            <div class="banner-text-box">
+                <h3 class="banner-text">
+                    ¿Encontraste un perrito y no localizas a su dueño?
+                </h3>
+                <p class="banner-parraf">
+                    Busca en nuestra lista de perritos perdidos, quizá su dueño lo este buscando, no esperes más. 
+                </p>
+                <a href="pages/perritosPerdidos.html"><button class="banner-btn">Ver perritos perdidos</button></a>
             </div>
-        </div>
-        <div>
-            <img src="img/banner-email.png" alt="banner-email">
-        </div>
-    </section>
+        </section>
+        <!-- Mapa de Busqueda -->
+        <section class="mapa">
+            <h3>Mapa de Busqueda</h3>
+            <div id="map"></div>
+        </section>
+        <!-- Banner para consultas -->
+        <section class="banner-2">
+            <div class="banner-img">
+                <img src="img/banner-email.png" alt="banner-email" class="">
+            </div>
+            <div class="banner-email">
+                <div class="banner-text">
+                    <h3>¿Tienes una consulta?, comunícate con nosotros</h3>
+                    <p>En caso de dudas o sugerencias, escríbenos a hola@huellas.pe o déjanos tu correo y te contactaremos.</p>
+                </div>
+                <div class="banner-btn">
+                    <form action="/">
+                        <input type="email" name="email" id="email" placeholder="Ingresa tu email: ejemplo@gmail.com" required>
+                        <input type="submit" value="Enviar Ahora" class="send">
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-        <div class="copyright">
+        <div class="caja-1">
             <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo"></a>
             <h3>© 2022 huellas.pe Hecho con <span>♥</span> en Perú</h3>
             <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        <div class="publicar">
-            <h2>Publicar</h2>
-            <p>Perdi mi perrito</p>
-            <p>Encontre un perrito</p>
+        <div class="caja-2">
+            <div class="publicar">
+                <h2><a href="pages/publicar.html">Publicar</a></h2>
+                <p><a href="pages/publicar.html">Perdi mi perrito</a></p>
+                <p><a href="pages/publicar.html">Encontre un perrito</a></p>
+            </div>
+            <div class="publicaciones">
+                <h2><a href="pages/perritoEncontrado.html">Publicaciones</a></h2>
+                <p><a href="pages/perritoEncontrado.html">Perritos perdidos</a></p>
+                <p><a href="pages/perritosPerdidos.html">Perritos encontrados</a></p>
+            </div>
         </div>
-        <div class="publicaciones">
-            <h2>Publicaciones</h2>
-            <p>Perritos perdidos</p>
-            <p>Perritos encontrados</p>
+        <div class="caja-3">
+            <div class="aboutUs">
+                <h2><a href="#">Sobre Huellitas</a></h2>
+                <p><a href="#">¿Quiénes Somos?</a></p>
+                <p><a href="#">Preguntas frecuentes</a></p>
+                <p><a href="#">hola@huellitas.pe</a></p>
+            </div>
+            <div class="legal">
+                <h2><a href="#">Legal</a></h2>
+                <p><a href="#">Términos y condiciones</a></p>
+                <p><a href="#">Política de Privacidad</a></p>
+            </div>
         </div>
-        <div class="aboutUs">
-            <h2>Sobre Huellitas</h2>
-            <p>¿Quiénes Somos?</p>
-            <p>Preguntas frecuentes</p>
-            <p>hola@huellitas.pe</p>
-        </div>
-        <div class="legal">
-            <h2>Legal</h2>
-            <p>Términos y condiciones</p>
-            <p>Política de Privacidad</p>
-        </div>
-    </footer>
+        </footer>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
@@ -212,7 +220,5 @@
     <!-- Api Maps -->
     <script src="js/maps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
-    <!-- Font Awesome (Iconos) -->
-    <script src="https://kit.fontawesome.com/c8753d1bc8.js" crossorigin="anonymous"></script>
 </body>
 </html>

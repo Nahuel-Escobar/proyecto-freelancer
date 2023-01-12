@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome (iconos)-->
+    <script src="https://kit.fontawesome.com/2c1892ead4.js" crossorigin="anonymous"></script>
+    <title>Huellitas | Login</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="../index.html"><img src="../img/logo.png" alt="Logo" class="logo"></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn"><i class="fa-solid fa-bars"></i></label>
+            <ul class="nav-menu">
+                <li><a href="publicar.html">Publicar</a></li>
+                <li><a href="perritosPerdidos.html">Perritos perdidos</a></li>
+                <li><a href="perritoEncontrado.html">Perritos encontrados</a></li>
+                <li><a href="iniciarSesion.html">Iniciar sesion</a></li>
+                <li><a href="register.html" class="register-nav">Registrate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container-login">
+                <div class="caja-login">
+                    <div class="container-caja-login">
+                        <form action="#">
+                            <!-- icono de x para cerrar menu - desabilitado -->
+                            <!-- <i class="fa-solid fa-xmark closed"></i> --> 
+                            <div class="form-titulo">
+                                <h2>Inicia sesión en </h2>
+                                <h3>Huellas.pe</h3>
+                            </div>
+                            <div class="datos-login">
+                                <div class="datos-2">
+                                    <div class="datos-caja-2">
+                                        <label for="name">Correo electronico</label>
+                                        <input type="email" placeholder="Ejemplo@gmail.com" required>
+                                    </div>
+                                    <div class="datos-caja-2">
+                                        <label for="name">Constraseña</label>
+                                        <input type="password" placeholder="************" required>
+                                        <i class="fa-solid fa-eye"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Continuar" class="enviar">
+                        </form>
+                        <br>	
+                        <br>
+                        <hr>
+                        <br>
+                        <br>
+                        <div class="google-facebook-caja">
+                            <div class="caja-button">
+                                <i class="fa-brands fa-google"></i><a href="#">Continuar con Google</a>
+                            </div>
+                            <div class="caja-button">
+                                <i class="fa-brands fa-facebook"></i><a href="#">Continuar con Facebook</a>
+                            </div>
+                        </div>
+                        <div class="datos-seguir-login">
+                            <h4>Aun no tienes cuenta? <a href="register.html">Inscribirse</a></h4>
+                            <h5>Al continuar, reconoce y acepta nuestra <a href="#">Política de privacidad y Términos de uso.</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

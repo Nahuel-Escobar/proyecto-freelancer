@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome (iconos)-->
+    <script src="https://kit.fontawesome.com/2c1892ead4.js" crossorigin="anonymous"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="../index.html"><img src="../img/logo.png" alt="Logo" class="logo"></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn"><i class="fa-solid fa-bars"></i></label>
+            <ul class="nav-menu">
+                <li><a href="publicar.html">Publicar</a></li>
+                <li><a href="perritosPerdidos.html">Perritos perdidos</a></li>
+                <li><a href="perritoEncontrado.html">Perritos encontrados</a></li>
+                <li><a href="iniciarSesion.html">Iniciar sesion</a></li>
+                <li><a href="register.html" class="register-nav">Registrate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="texto-pagina-pE">
+                <h3>Home <span>></span> Publicaciones <span>></span> Perrito encontrado</h3>
+            </div>
+        </section>
+        <section>
+            <div class="container-grid-pE">
+                <div class="caja-1-pE">
+                    <div class="container-2">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide-2">
+                                    <img src="../img/miniatura.png" alt="perritoEncontrado">                                    
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div class="caja-miniaturas">
+                        <img src="../img/miniatura-1.png" alt="Miniatura perrito 1">
+                        <img src="../img/miniatura-2.png" alt="Miniatura perrito 2">
+                        <img src="../img/miniatura-3.png" alt="Miniatura perrito 3">
+                    </div>
+                    <div class="caja-pP">
+                        <a href="perritosPerdidos.html"><img src="../img/banner-pP.png" alt="Banner Perros encontrados" class="banner-pPerdido"></a>
+                    </div>
+                </div>
+                <div class="caja-2-pE">
+                    <div class="card1-texto">
+                        <h2>Descripción del encuentro</h2>
+                        <div class="card-caja">
+                            <img src="../img/foto-perfil-pE.png" alt="perfil">
+                            <div class="card-caja-texto">
+                                <h3>Santiago ***** **** ******</h3>
+                                <h4>04/02/2021</h4>
+                            </div>
+                        </div>
+                        <div class="card-caja-2">
+                            <h3>Es un perro macho que al parecer está perdido o quizá abandonado, anda por los alrededores de la av. naranjal y av. alfredo mendiola,  ya tiene su pelo largo y está mal de su patita, al parecer se ve ....</h3>
+                            <h4>Ver descripción completa</h4>
+                        </div>
+                        <div class="card-caja-3">
+                            <img src="../img/icono-pE.png" alt="Icono">
+                            <div class="card-caja-texto">
+                                <h3>Av. Naranjal 414</h3>
+                                <h4>a Cercado de Lima 15304</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2-texto">
+                        <h2>Detalles del perrito</h2>
+                        <div class="card-caja">
+                            <div class="caja">
+                                <h2>Raza:</h2>
+                                <h3>Mestizo</h3>
+                                <h4>Color:</h4>
+                                <h5>Marrón</h5>
+                            </div>
+                            <div class="caja">
+                                <h2>Edad:</h2>
+                                <h3>Adulto</h3>
+                                <h4>Sexo</h4>
+                                <h5>Macho</h5>
+                            </div>
+                            <div class="caja">
+                                <h2>Tamaño:</h2>
+                                <h3>Grande</h3>
+                                <h4>Chip:</h4>
+                                <h5>No</h5>
+                            </div>
+                            <div class="caja-fecha">
+                                <h2>Fecha:</h2>
+                                <h3> 04/02/22</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card3-texto">
+                        <h2>Contactate con el anunciante</h2>
+                        <div class="card-caja">
+                            <div class="card-phone">
+                                <img src="../img/icono-phone.png" alt="icono celular">
+                                <h3>935 768 *** / 995 331 ***</h3>
+                            </div>
+                            <div class="card-email">
+                                <img src="../img/icono-email.png" alt="icono email">
+                                <h3>Santiago.***************@gmail.com</h3>
+                            </div>
+                        </div>
+                        <button><a href="#">Click para ver</a></button>
+                    </div>
+                </div>
+                <div class="caja-3-pE">
+                    <div class="caja-mapa-2">
+                        <section class="mapa-encontrar">
+                            <div id="map"></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Initialize Swiper -->
+    <script src="js/carrousel.js"></script>
+    <!-- Api Maps -->
+    <script src="../js/maps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+</body>
+</html>

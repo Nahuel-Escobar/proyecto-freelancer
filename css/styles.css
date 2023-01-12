@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans&display=swap');
 
 /*  
+                Fuentes
     font-family: 'Montserrat', sans-serif;
     font-family: 'Nunito Sans', sans-serif; 
 */
@@ -15,86 +16,162 @@
 
 /* Defino fuentes y tamaños */
 body {
+    width: 100%;
     font-size: 62.5%;
     background: #F4F3F1;
 }
 
-/* Estilos para el header */
-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+
+/* Header */
+
+header nav{
+    width: 100%;
     height: 8vh;
-    margin: 16px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .logo {
-    margin-right: auto;
+header nav .logo {
+    height: 12px;
+    margin-left: 10px;
+}
+
+header nav .bar-btn {
+    font-size: 1.5rem;
     cursor: pointer;
+    margin-right: 20px;
 }
 
-header .logo img {
-    height: 18px;
-    width: auto;
-    transition: all 0.3s;
+header nav .nav-menu {
+    position: fixed;
+    width: 100%;
+    height: 0%;
+    top: 8vh;
+    background-color: #adadadc8;
+    z-index: 100;
+    text-align: center;
+    transition: all .5s;
 }
 
-header .logo img:hover {
-    transform: scale(1.05);
+header nav .nav-menu {
+    display: block;
+    line-height: 30px;
+    transition: all 0.5s;
 }
 
-/* Estilos a los links del navbar */
-
-header .nav-links {
+header nav .nav-menu li {
+    display: none;
+    margin-top: 50px;
     list-style: none;
+    transition: all .5s;
 }
 
-header .nav-links li{
-    display: inline-block;
-    padding: 0 20px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
-    font-size: 0.8rem;
-}
-
-header .nav-links a {
-    color: #2F2F2F;
-    margin: 0px 20px;
+header nav .nav-menu li a {
+    color: #2F2F2F; 
+    font-size: 1.5rem;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
     text-decoration: none;
 }
 
-/* Estilo al boton registrarse */
-
-header .btn button {
-    background: #F4F3F1;
-    color: #000000;
+header nav .nav-menu li .register-nav {
     padding: 12px 24px;
+    width: 122px;
+    height: 48px;
     border: 2px solid #2F2F2F;
     border-radius: 24px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+}   
+/* Funcionalidad responsive */
+header nav #check {
+    display: none;
 }
 
-header .btn button:hover {
-    transform: scale(1.04);
+header nav #check:checked ~ .nav-menu {
+    height: 100vh;
+}   
+
+header nav #check:checked ~ .nav-menu li {
+    display: block;
 }
 
+/* Responsive tablet y desktop */
+@media screen and (min-width: 798px) {
+    header nav .logo{
+        height: 18px;
+        margin-left: 30px;
+    }
+
+    header nav .bar-btn {
+        display: none;
+    }
+
+    header nav .nav-menu {
+        position: relative;
+        top: 0;
+        background: none;
+        transition: none;
+        height: 100px;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    header nav .nav-menu li {
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    header nav .nav-menu li a {
+        font-weight: 400;
+        font-size: 0.7rem;
+    }
+
+    header nav .nav-menu li .register-nav {
+        padding: 8px 18px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header nav .nav-menu li a {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}
+
+/**************************************** ********************************************* *******************************/
 /* editando el contenido de la pagina */
 /* Estilos al Titulo e imagen */
 main .contenedor-presentacion {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    margin: 36px 16px;
-    margin: 0 auto;
-    width: 95%;
-    height: 95%;
+    display: grid;
+    grid-template-areas: 
+    "texto ilustracion"
+    ; 
 }
+
+/* Imagen */
+
+main .contenedor-presentacion .ilustracion {
+    grid-area: ilustracion;
+}
+
+/* Imagen de presentacion */
+main .contenedor-presentacion .ilustracion img {
+    grid-area: ilustracion;
+    width: 100%;
+}
+
 
 /* titulo */
 
 main section .titulo-texto {
-    margin: 20px 0px;
+    width: 100%;
+    height: 100%;
+    grid-area: texto;
+    margin: 50px auto;
     padding: 35px 0px;
     text-align: center;
 }
@@ -125,7 +202,7 @@ main section .titulo-texto p {
 
 /* medidas de los botones de ayuda */
 main section .btn-ayuda {
-    margin: 14px 0px;
+    margin: 14px auto;
 }
 
 /* Boton 1 "Perdi mi perrito" */
@@ -152,25 +229,215 @@ main section .btn-ayuda .btn-ayuda-2 {
     border-radius: 24px;
     cursor: pointer;
 }
+    
 
-/* Imagen de presentacion */
-main .contenedor-presentacion .ilustracion img {
-    height: 325px;
-    width: auto;
+/* Responsive desktop y Tablet*/
+
+@media screen  and (max-width: 1444px){
+    main section .titulo-texto {
+        margin: 25px auto;
+        padding: 40px 0px;
+        text-align: center;
+    }
+
+    main section .titulo-texto h1 {
+        font-size: 1.8rem;
+        height: 102px;
+    }
+
+    main section .titulo-texto p {
+        width: 90%;
+        height: 52px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 400;
+        font-size: 1.3rem;
+        margin: 0 auto;
+        line-height: 28px;
+        color: #2F2F2F;
+    }
+
+    main section .btn-ayuda {
+        margin: 24px 0px;
+    }
 }
 
+@media screen  and (max-width: 1024px){
+    main section .titulo-texto {
+        margin: 10px auto;
+        padding: 25px 0px;
+        text-align: center;
+    }
+
+    main section .titulo-texto h1 {
+        font-size: 1.5rem;
+    }
+
+    main section .titulo-texto p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    main section .btn-ayuda {
+        margin: 20px 0px;
+    }
+}
+
+@media screen  and (max-width: 900px){
+
+    main section .titulo-texto h1 {
+        font-size: 1.2rem;
+        height: 35%;
+        line-height: 30px;
+    }
+
+    main section .titulo-texto p {
+        width: 90%;
+        font-size: 0.8rem;
+        color: #2F2F2F;
+    }
+
+    main section .btn-ayuda {
+        margin: 10px 0px;
+    }
+    
+    main section .btn-ayuda .btn-ayuda-1 {
+        width: 45%;
+        margin-right: 10px;
+    }
+
+    main section .btn-ayuda .btn-ayuda-2 {
+        width: 45%;
+        margin-right: 10px;
+    }
+}
+
+@media screen  and (max-width: 780px){
+
+    main section .titulo-texto {
+        padding: 15px 0px;
+    }
+
+    main section .titulo-texto h1 {
+        font-size: 1rem;
+    }
+
+    main section .titulo-texto p {
+        font-size: 0.65rem;
+    }
+    
+    main section .btn-ayuda .btn-ayuda-1 {
+        width: 45%;
+        font-size: 0.65rem;
+    }
+
+    main section .btn-ayuda .btn-ayuda-2 {
+        width: 45%;
+        font-size: 0.65rem;
+    }
+
+}
+
+@media screen  and (max-width: 640px){
+
+    main section .titulo-texto {
+        margin: 5px 0px;
+        padding: 10px 0px;
+    }
+
+    main section .titulo-texto h1 {
+        font-size: 0.9rem;
+    }
+
+    main section .titulo-texto p {
+        width: 85%;
+        font-size: 0.6rem;
+        line-height: 20px;
+    }
+    
+    main section .btn-ayuda .btn-ayuda-1 {
+        width: 30%;
+        font-size: 0.6  rem;
+    }
+
+    main section .btn-ayuda .btn-ayuda-2 {
+        width: 30%;
+        font-size: 0.6rem;
+    }
+}
+
+
+/* Responsive Celulares*/
+
+@media screen  and (max-width: 600px){
+
+    main .contenedor-presentacion {
+        grid-template-areas: 
+        "ilustracion"
+        "texto"
+        ; 
+        width: 95%;
+        margin: auto;
+    }
+
+    main .contenedor-presentacion .ilustracion img {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    main section .titulo-texto {
+        grid-area: texto;
+        margin: 5px;
+        padding: 10px 0px;
+    }
+
+    main section .titulo-texto h1 {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    main section .titulo-texto p {
+        font-size: 0.8rem;
+    }
+    
+    main section .btn-ayuda {
+        margin: 20px 0px;
+    }
+
+    main section .btn-ayuda .btn-ayuda-1 {
+        width: 45%;
+    }
+
+    main section .btn-ayuda .btn-ayuda-2 {
+        width: 45%;
+    }
+}
+
+
+@media screen  and (max-width: 320px){
+    
+    main section .btn-ayuda .btn-ayuda-1 {
+        font-size: 0.45rem;
+    }
+
+    main section .btn-ayuda .btn-ayuda-2 {
+        font-size: 0.45rem;
+    }
+}
+
+/* *********************************************************************** *********************************************** */
 /* Carousel "perritos encontrados" */
 
 main .carrousel h2 {
     font-family: 'Montserrat';
     font-size: 1.6rem;
-    padding: 10px 40px;
+    padding: 10px 30px;
     margin: 40px 0px 32px 0px;
     color: #2F2F2F;
 }
 .container {
     margin: 0 auto;
-    padding: 10px 40px;
+    padding: 10px 30px;
 }
 
 .container .swiper {
@@ -221,12 +488,31 @@ main .carrousel h2 {
     width: 50px !important;
 }
 
+/* Responsive  Carousel*/
+
+@media screen and (max-width:1024px) {
+    main .carrousel h2 {
+        font-size: 1.4rem;
+        padding: 10px 10px;
+        margin: 40px 0px 5px 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container .swiper {
+        width: 75%;
+        height: 75%;
+    }
+}
+
+/********************************************************************** ********************************************************/
+
 /* Banner "¿Encontro un perro?" */
 main .banner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+    "banner text"
+    ;
     padding: 40px 80px;
     background: #FADFC7;
     box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
@@ -235,50 +521,60 @@ main .banner {
     margin: 48px auto;
 }
 
+/* Banner img */
+main .banner .banner-img{
+    grid-area: banner;
+    width: 100%;
+}
+
+
 /* Añadiendo estilo a la caja de texto del banner*/
 main .banner .banner-text-box {
-    margin: 0px 50px;
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 34px;
 }
 
 /* Añadiendo estilos al h3 del banner */
 main .banner .banner-text-box .banner-text {
-    width: 518px;
-    height: 76px;
+    width: 80%;
+    margin: 0 auto;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 38px;
     color: #2F2F2F;
-    margin: -30px 0px 20px 0px;
 }
 
 /* Añadiendo estilo al parrafo del banner */
 main .banner .banner-text-box .banner-parraf {
-    width: 518px;
-    height: 48px;
+    width: 80%;
+    margin: 0 auto;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     color: #2F2F2F;
-    margin: 10px 0px 20px 0px;
 
 }
 
 /* Añadiendole estilo al bottom */
 
 main .banner .banner-text-box .banner-btn {
-    padding: 15px 40px;
+    padding: 12px 24px;
     cursor: pointer;
     background: #FADFC7;
     box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
     border-radius: 24px;
+    border: 1px solid black;
 }
 
 main .banner .banner-text-box a {
-    width: 151px;
     height: 24px;
     font-family: 'Nunito Sans';
     font-style: normal;
@@ -289,13 +585,90 @@ main .banner .banner-text-box a {
     text-decoration: none;
 }
 
+/* Responsive tablet desktop */
+
+@media screen and (max-width: 1024px) {
+
+    main .banner .banner-text-box {
+        gap: 14px;
+    }
+
+    main .banner .banner-text-box .banner-text {
+        width: 85%;
+        font-size: 1.2rem;
+        line-height: 28px;
+        color: #2F2F2F;
+    }
+    
+    /* Añadiendo estilo al parrafo del banner */
+    main .banner .banner-text-box .banner-parraf {
+        width: 85%;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    main .banner {
+        padding: 30px 50px;
+    }
+    
+    main .banner .banner-text-box {
+        gap: 10px;
+    }
+    
+    main .banner .banner-text-box .banner-text {
+        font-size: 1rem;
+    }
+    
+    main .banner .banner-text-box .banner-parraf {
+        font-size: 0.6rem;
+    }
+    
+    main .banner .banner-text-box .banner-btn {
+        padding: 8px 14px;
+    }
+}
+
+/* Responsive para celulares */
+
+@media screen and (max-width: 600px) {
+
+    main .banner {
+        grid-template-areas: 
+        "banner"
+        "text"
+        ;
+        padding: 40px 50px;
+    }
+    
+    main .banner .banner-text-box {
+        margin-top: 20px;
+        gap: 20px;
+    }
+    
+    main .banner .banner-text-box .banner-text {
+        width: 90%;
+        font-size: 1.3rem;
+    }
+    
+    main .banner .banner-text-box .banner-parraf {
+        font-size: 1rem;
+    }
+    
+    main .banner .banner-text-box .banner-btn {
+        padding: 14px 24px;
+    }
+}
+
+/**************************************** *****************************************/
 /* Mapa del Home */
 /* Titulo */
 main .mapa h3 {
     font-family: 'Montserrat';
     font-size: 1.6rem;
-    padding: 10px 40px;
-    margin: 40px 0px 32px 0px;
+    padding: 10px 3%;
+    margin: 40px 0px 12px 0px;
     color: #2F2F2F;
 }
 
@@ -307,25 +680,45 @@ main .mapa #map {
     margin: 0 auto;
 }
 
+
+/********************************** ***********************************/
 /* Banner Enviar Email / Consulta */
 
-main .banner-email {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 93.5%;
+main .banner-2 {
+    display: grid;
+    grid-template-areas: 
+    "text2 banner2"
+    ;
     padding: 40px 80px;
-    margin: 30px auto;
     background: #C2E3EB;
     box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
     border-radius: 24px;
+    width: 93.5%;
+    height: 100%;
+    margin: 40px auto;
 }
 
+/* Imagen del banner */
+main .banner-2 .banner-img img{
+    grid-area: banner2;
+    width: 100%;
+}
+
+
 /* Titulo de la caja de texto del banner email */
-main .banner-email .banner-email-text h3 {
-    width: 504px;
-    height: 76px;
+main .banner-2 .banner-email{
+    grid-area: text2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0px;
+    width: 100%;
+}
+
+main .banner-2 .banner-email .banner-text h3 {
+    width: 90%;
+    margin: 10px 0px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -335,170 +728,413 @@ main .banner-email .banner-email-text h3 {
 }
 
 /* Descripcion de la caja de texto del banner email */
-main .banner-email .banner-email-text p {
-    width: 504px;
-    height: 48px;
+main .banner-2 .banner-email .banner-text p {
+    width: 90%;
+    margin: 10px 0px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
-    margin: 20px 0px;
+    margin-top: 10px;
     line-height: 24px;
     color: #2F2F2F;
+    
 }
 
 /* Caja de inputs email */
-main .banner-email .banner-email-text input {
+
+main .banner-2 .banner-email .banner-btn{
+    width: 100%;
+}
+
+main .banner-2 .banner-email .banner-btn form input {
     padding: 8px 8px 8px 24px;
     border: none;
-    width: 504px;
+    display: block;
+    width: 80%;
+    margin: 10px 0px;
     height: 64px;
     background: #FFFFFF;
     border-radius: 24px;
 }
 
 /*Boton enviar */
-main .banner-email .banner-email-text .send {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px auto;
+main .banner-2 .banner-email .banner-btn .send {
     padding: 12px 24px;
-    width: 138px;
+    width: 25%;
     height: 48px;
     background: #FFF278;
     border: 2px solid #000000;
     border-radius: 24px;
     cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    margin-left: 25%;
 }
 
+/* Responsive tablet y desktop */
+
+@media screen and (max-width:1074px) {
+    main .banner-2 {
+        padding: 30px 60px;
+    }
+    
+    main .banner-2 .banner-email .banner-text h3 {
+        width: 90%;
+        font-size: 1.2rem;
+        line-height: 28px;
+    }
+    
+    main .banner-2 .banner-email .banner-text p {
+        font-size: 1rem;
+        line-height: 22px;
+    }
+    
+    main .banner-2 .banner-email .banner-btn{
+        width: 100%;
+    }
+    
+    main .banner-2 .banner-email .banner-btn form input {
+        background: #FFFFFF;
+    }
+    
+    /*Boton enviar */
+    main .banner-2 .banner-email .banner-btn .send {
+        width: 30%;
+        font-size: 0.65rem;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width:990px) {
+    main .banner-2 {
+        padding: 20px 40px;
+    }
+    
+    main .banner-2 .banner-email .banner-text h3 {
+        width: 90%;
+        font-size: 1rem;
+        line-height: 24px;
+        margin-top: 10px;
+    }
+    
+    main .banner-2 .banner-email .banner-text p {
+        font-size: 0.65rem;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+    
+    main .banner-2 .banner-email .banner-btn{
+        width: 85%;
+    }
+    
+    main .banner-2 .banner-email .banner-btn form input {
+        background: #FFFFFF;
+        width: 90%;
+        height: 45px;
+        margin-top: 10px;
+    }
+    
+    /*Boton enviar */
+    main .banner-2 .banner-email .banner-btn .send {
+        width: 30%;
+        height: 35px;
+        font-size: 0.45rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:760px) {
+    main .banner-2 {
+        padding: 10px 20px;
+    }
+    
+    main .banner-2 .banner-email .banner-text h3 {
+        width: 85%;
+        font-size: 0.8rem;
+        line-height: 24px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:660px) {
+    main .banner-2 {
+        padding: 10px 20px;
+    }
+    
+    main .banner-2 .banner-email .banner-text h3 {
+        width: 85%;
+        font-size: 0.8rem;
+        line-height: 16px;
+        margin-top: 10px;
+    }
+
+    main .banner-2 .banner-email .banner-text p {
+        width: 85%;
+        font-size: 0.65rem;
+        line-height: 14px;
+        margin-top: 10px;
+    }
+
+    main .banner-2 .banner-email .banner-btn .send {
+        font-size: 0.4rem;
+    }
+
+}
+
+/* Responsive Celular */
+
+@media screen and (max-width: 600px) {
+
+    main .banner-2 {
+        grid-template-areas: 
+        "banner2"
+        "text2"
+        ;
+        padding: 40px 50px;
+    }
+    
+    main .banner-2 .banner-email .banner-text h3 {
+        width: 85%;
+        font-size: 1.2rem;
+        line-height: 22px;
+        margin-top: 20px;
+    }
+
+    main .banner-2 .banner-email .banner-text p {
+        width: 80%;
+        font-size: 0.9rem;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+
+    main .banner-2 .banner-email .banner-btn{
+        width: 100%;
+    }
+
+    main .banner-2 .banner-email .banner-btn form input {
+        width: 100%;
+        font-size: 0.6rem;
+    }
+
+    main .banner-2 .banner-email .banner-btn .send {
+        font-size: 0.4rem;
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 410px) {
+
+    main .banner-2 {
+        grid-template-areas: 
+        "banner2"
+        "text2"
+        ;
+        padding: 40px 50px;
+    }
+    
+    main .banner-2 .banner-email .banner-text h3 {
+        width: 85%;
+        font-size: 1.5rem;
+        line-height: 28px;
+        margin-top: 20px;
+    }
+
+    main .banner-2 .banner-email .banner-text p {
+        width: 80%;
+        font-size: 0.8rem;
+        line-height: 22px;
+        margin-top: 20px;
+    }
+
+    main .banner-2 .banner-email .banner-btn .send {
+        width: 50%;
+        font-size: 0.5rem;
+        margin: 0 auto;
+    }
+
+}
+
+/********************************************** **********************************************/
 /* Footer del Home */
 
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 54px 76px;
+    width: 90%;
+    display: grid;
+    grid-template-areas: 
+    "caja1 caja2 caja3"
+    ;
+    margin: 10px auto;
+    text-align: center;
 }
 
 /* Copyright y Logo */
-footer .copyright {
-    margin-left: -30px;
-    width: 176px;
+footer .caja-1 {
+    grid-area: caja1;
+    margin: 10px 0px;
 }
 
-footer .copyright .logo {
-    margin-bottom: 30px;
-}
-
-footer .copyright h3 {
-    width: 155px;
-    height: 48px;
+footer .caja-1 h3{
+    width: 100%;
+    margin: 15px 0px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     color: #2F2F2F;
+    text-decoration: none;
 }
 
-footer .copyright i {
+footer .caja-1 i {
     font-size: 1.5rem;
     color: #2F2F2F;
     padding: 5px 15px 0px 0px;
 }
 
 /* El corazoncito */
-footer .copyright span {
+footer .caja-1 span {
     color: red;
 }
 
-/* Apartado Publicar */
-
-footer .publicar h2{
-    font-family: 'Nunito Sans';
-    font-size: 16px;
-    line-height: 24px;
-    color: #2F2F2F;
+/* Apartado Publicar footer */
+footer .caja-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
 }
 
-footer .publicar p {
+footer .publicar h2 a{
+    font-family: 'Nunito Sans';
+    font-size: 1rem;
+    color: #2F2F2F;
+    line-height: 44px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+footer .publicar p a{
     margin-top: 10px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 34px;
     color: #2F2F2F;
+    text-decoration: none;
 }
 
-/* Apartado Publicaciones */
-
-footer .publicaciones h2 {
+/* Apartado Publicaciones footer */
+footer .publicaciones h2 a{
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 44px;
     color: #2F2F2F;
+    text-decoration: none;
 }
 
-footer .publicaciones p {
+footer .publicaciones p a {
     margin-top: 10px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 34px;
     color: #2F2F2F;
+    text-decoration: none;
 }
 
-/* Apartado Sobre Huellas */
+/* Apartado Sobre Huellas footer*/
 
-footer .aboutUs h2 {
+footer .caja-3 {
+    grid-area: caja3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;  
+}
+
+footer .aboutUs h2 a {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 44px;
     color: #2F2F2F;
+    text-decoration: none;
 }
 
-footer .aboutUs p {
+footer .aboutUs p a {
     margin-top: 10px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 34px;
     color: #2F2F2F;
+    text-decoration: none;
 }
 
-/* Apartado Términos legales */
+/* Apartado Términos legales footer*/
 
-footer .legal h2 {
+footer .legal h2 a {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 44px;
     color: #2F2F2F;
+    text-decoration: none;
 }
 
-footer .legal p {
+footer .legal p a {
     margin-top: 10px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 34px;
     color: #2F2F2F;
+    text-decoration: none;
+}
+/* Responsive desktop y tablet*/
+
+
+@media screen and (max-width:1024px) {
+    footer {
+        grid-template-areas: 
+        "caja1 caja1" 
+        "caja2 caja3"
+        ;
+    }
+    
+    footer .caja-1 {
+        margin: 20px 0px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    footer {
+        grid-template-areas: 
+        "caja1" 
+        "caja2"
+        "caja3"
+        ;
+    }
+    
+    footer .caja-1, .caja-2, .caja-3 {
+        margin: 20px 0px;
+    }
 }
 
 /* **************************************************** ****************************************************/
 
 /* Apartado "Publicar" */
-
 /* Etiqueta de la página */
 main .publicar-titulo h3, main .publicar-titulo-2 h3, main .publicar-titulo-3 h3 {
     font-family: 'Nunito Sans', sans-serif; 
@@ -515,47 +1151,43 @@ main section h3 span {
     margin: 0px 10px;
 }
 
+
+/* ******************************************* */
+
 /* Caja de de publicar de todas las cajas */
 
-main .publica, .publica-2, .publica-3{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 838px;
-    position: absolute;
-    top: 450px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+main .grid-container-publicar {
+    display: grid;
+    width: 90%;
+    margin: 5px auto;
+    grid-template-columns: 1fr 1fr;
 }
 
+/* *********************************** */
 /* Imagen de apartado Publica */
-main .publica img {
-    width: 657px;
-    height: 838px;
-    border-radius: 24px 0px 0px 24px;
+main .caja-img img {
+    width: 100%;
 }
 
 /* apartado de la derecha de publicar de todas las cajas*/
-main .publica .publica-caja, main .publica-2 .publica-caja, main .publica-3 .publica-caja{
+main .grid-container-publicar .publica{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 30px;
-    width: 484px;
-    height: 838px;
+    padding: 25px;
+    width: 100%;
+    height: 100%;
     background: #FFFFFF;
     border-radius: 0px 24px 24px 0px;
 }
 
-main .publica .publica-caja .publica-texto, main .publica-2 .publica-caja .publica-texto, main .publica-3 .publica-caja .publica-texto{
+main .publica .publica-texto{
     width: 100%;
 }
 
 /* Textos y botones TODAS las caja a publicar */
-main .publica .publica-caja .publica-texto .publicar-btn, main .publica-2 .publica-caja .publica-texto .publicar-btn,  main .publica-3 .publica-caja .publica-texto .publicar-btn{
+main .publica .publica-texto .publicar-btn{
     width: 40px;
     height: 40px;
     margin: 0px 30px;
@@ -563,17 +1195,17 @@ main .publica .publica-caja .publica-texto .publicar-btn, main .publica-2 .publi
     border-radius: 8px;
 }
 
-main .publica .publica-caja .publica-texto .active, main .publica-2 .publica-caja .publica-texto .active, main .publica-3 .publica-caja .publica-texto .active{
+main .publica  .publica-texto .active{
     background: #FFA078;
 
 }
 
-main .publica .publica-caja .publica-texto span, main .publica-2 .publica-caja .publica-texto span, main .publica-3 .publica-caja .publica-texto span  {
+main .publica .publica-texto span {
     margin-left: -25px;
     font-size: 1rem;
 }
 
-main .publica .publica-caja .publica-texto p, main .publica-2 .publica-caja .publica-texto p, main .publica-3 .publica-caja .publica-texto p{
+main .publica .publica-texto p{
     height: 24px;
     font-family: 'Nunito Sans';
     font-style: normal;
@@ -586,7 +1218,7 @@ main .publica .publica-caja .publica-texto p, main .publica-2 .publica-caja .pub
     margin: 30px 30px 10px 25px;
 }
 
-main .publica .publica-caja .publica-texto h2, main .publica-2 .publica-caja .publica-texto h2, main .publica-3 .publica-caja .publica-texto h2{
+main .publica .publica-texto h2{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -599,7 +1231,7 @@ main .publica .publica-caja .publica-texto h2, main .publica-2 .publica-caja .pu
 }
 
 /* Texto de la parte de abajo de la caja de publicar */
-main .publica .publica-caja .publica-texto-2 {
+main .publica  .publica-texto-2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -608,7 +1240,7 @@ main .publica .publica-caja .publica-texto-2 {
     height: 232px;
 }
 
-main .publica .publica-caja .publica-texto-2 .texto-2 {
+main .publica  .publica-texto-2 .texto-2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -618,7 +1250,7 @@ main .publica .publica-caja .publica-texto-2 .texto-2 {
     
 }
 
-main .publica .publica-caja .publica-texto-2 h2 {
+main .publica  .publica-texto-2 h2 {
     height: 96px;
     font-family: 'Montserrat';
     font-style: normal;
@@ -630,7 +1262,7 @@ main .publica .publica-caja .publica-texto-2 h2 {
     color: #000000;
 }
 
-main .publica .publica-caja .publica-texto-2 p {
+main .publica  .publica-texto-2 p {
     height: 48px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -643,22 +1275,22 @@ main .publica .publica-caja .publica-texto-2 p {
 }
 
 /* Customizando los botonos de la primera pagina de publicar*/
-main .publica .publica-caja .publica-texto-2 .btn-publicar {
+main .publica  .publica-texto-2 .btn-publicar {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
     gap: 16px;
-    width: 377px;
+    width: 100%;
     height: 48px;
 }
 
 
-main .publica .publica-caja .publica-texto-2 .btn-publicar a{
+main .publica  .publica-texto-2 .btn-publicar a{
     text-decoration: none;
 }
 
-main .publica .publica-caja .publica-texto-2 .btn-publicar .perder-btn {
+main .publica  .publica-texto-2 .btn-publicar .perder-btn {
     box-sizing: border-box;
     padding: 12px 24px;
     gap: 10px;
@@ -670,7 +1302,7 @@ main .publica .publica-caja .publica-texto-2 .btn-publicar .perder-btn {
     cursor: pointer;
 }
 
-main .publica .publica-caja .publica-texto-2 .btn-publicar .encontrar-btn {
+main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
     box-sizing: border-box;
     padding: 12px 24px;
     gap: 10px;
@@ -682,26 +1314,348 @@ main .publica .publica-caja .publica-texto-2 .btn-publicar .encontrar-btn {
     cursor: pointer;
 }
 
+
+
+
+/* Responsive Tablet y Dekstop */
+
+ @media screen and (max-width:930px) {
+    
+    /* Textos y botones TODAS las caja a publicar */
+    main .publica .publica-texto .publicar-btn{
+        width: 30px;
+        height: 30px;
+        margin: 0px 30px;
+        border: 2px solid #000000;
+        border-radius: 8px;
+    }
+    
+    main .publica .publica-texto span {
+        margin-left: -25px;
+        font-size: 0.7rem;
+    }
+    
+    main .publica .publica-texto p{
+        font-size: 0.8rem;
+    }
+    
+    main .publica .publica-texto h2{
+        font-size: 1rem;
+    }
+    main .publica  .publica-texto-2 h2 {
+        font-size:1.4rem;
+    }
+    
+    main .publica  .publica-texto-2 p {
+        font-size: 0.8rem;
+    }
+    
+    main .publica  .publica-texto-2 .btn-publicar a{
+        text-decoration: none;
+    }
+    
+    main .publica  .publica-texto-2 .btn-publicar .perder-btn {
+        padding: 8px 18px;
+        gap: 10px;
+        width: 150px;
+        height: 38px;
+        font-size: 0.7rem;
+    }
+    
+    main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
+        padding: 8px 18px;
+        width: 150px;
+        height: 38px;
+        font-size: 0.7rem;
+    }
+ }
+
+
+ @media screen and (max-width:768px) {
+    
+    main .grid-container-publicar .publica{
+        padding: 15px;
+    }
+
+    /* Textos y botones TODAS las caja a publicar */
+    main .publica .publica-texto .publicar-btn{
+        width: 25px;
+        height: 25px;
+        font-size: 0.5rem;
+    }
+    
+    main .publica .publica-texto span {
+        font-size: 0.5rem;
+    }
+    
+    main .publica .publica-texto p{
+        margin-left: 5px;
+        font-size: 0.7rem;
+    }
+    
+    main .publica .publica-texto h2{
+        margin-left: 5px;
+        font-size: 0.9rem;
+    }
+    main .publica  .publica-texto-2 h2 {
+        font-size: 1.1rem;
+        margin-left: 5px;
+
+    }
+    
+    main .publica  .publica-texto-2 p {
+        font-size: 0.7rem;
+        margin-left: 5px;
+
+    }
+    
+    main .publica  .publica-texto-2 .btn-publicar .perder-btn {
+        padding: 6px 12px;
+        gap: 10px;
+        width: 130px;
+        height: 28px;
+        font-size: 0.6rem;
+        margin-left: 5px;
+
+    }
+    
+    main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
+        padding: 6px 12px;
+        gap: 10px;
+        width: 130px;
+        height: 28px;
+        margin-left: 5px;
+        font-size: 0.6rem;
+    }
+ }
+
+/* Responsive Celulares */
+
+ @media screen and (max-width:620px) {
+    
+    main .publicar-titulo h3, main .publicar-titulo-2 h3, main .publicar-titulo-3 h3 {
+        padding: 16px 14px;
+    }
+
+    main .caja-img img {
+        width: 100%;
+        margin: 0;
+        background-color: white;
+    }
+    
+    /* apartado de la derecha de publicar de todas las cajas*/
+    main .grid-container-publicar .publica{
+        border-radius: 0px;
+        margin: 0;
+    }
+
+    main .grid-container-publicar {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+        grid-template-columns: 100%;
+    }
+    
+
+    main .grid-container-publicar .publica{
+        padding: 15px;
+        margin-top: -10px;
+    }
+
+    main .publica .publica-texto .publicar-btn{
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+    }
+    
+    main .publica .publica-texto span {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    
+    main .publica .publica-texto p{
+        margin-left: 5px;
+        font-size: 0.7rem;
+    }
+    
+    main .publica .publica-texto h2{
+        margin-left: 5px;
+        font-size: 1.1rem;
+    }
+    main .publica  .publica-texto-2 h2 {
+        font-size: 1.2rem;
+        margin-left: 5px;
+
+    }
+    
+    main .publica  .publica-texto-2 p {
+        font-size: 1rem;
+        margin-left: 5px;
+
+    }
+    
+    main .publica  .publica-texto-2 .btn-publicar .perder-btn {
+        padding: 10px 20px;
+        gap: 10px;
+        width: 150px;
+        height: 38px;
+        font-size: 0.6rem;
+        margin-left: 5px;
+
+    }
+    
+    main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
+        padding: 10px 20px;
+        gap: 10px;
+        width: 130px;
+        height: 38px;
+        margin-left: 5px;
+        font-size: 0.6rem;
+    }
+ }
+
+
+ @media screen and (max-width:375px) {
+    
+    main .publica .publica-texto span {
+        font-size: 0.6rem;
+    }
+    
+    main .publica .publica-texto p{
+        margin-left: 5px;
+        font-size: 0.7rem;
+    }
+    
+    main .publica .publica-texto h2{
+        margin-left: 5px;
+        font-size: 1rem;
+    }
+    main .publica  .publica-texto-2 h2 {
+        font-size: 0.9rem;
+        margin-left: 5px;
+        line-height: 20px;
+        width: 75%;
+    }
+    
+    main .publica  .publica-texto-2 p {
+        font-size: 0.8rem;
+        margin-left: 5px;
+        width: 65%;
+    }
+    
+    main .publica  .publica-texto-2 .btn-publicar .perder-btn {
+        padding: 10px 20px;
+        gap: 10px;
+        width: 120px;
+        height: 35px;
+        font-size: 0.6rem;
+        margin-left: 0px;
+
+    }
+    
+    main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
+        padding: 7px 15px;
+        gap: 10px;
+        width: 120px;
+        height: 35px;
+        margin-left: 0px;
+        font-size: 0.6rem;
+    }
+ }
+
+
+
+
 /* **************************************************** ****************************************************/
 /* Estilos de la Segunda Caja del Apartado Publicar! */
 
 /* Desaparecemos la caja para que con js la hagamos aparecer */
-main .publica-2 {
+main .grid-container-publicar-2 {
     display: none;
+    width: 95%;
+    margin: 5px auto;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* Le damos más altura */
-main .publica-2 .publica-caja {
+main .publica-2{
     height: 1358px;
 }
 
+main .caja-img-2 img {
+    width: 100%;
+    border-radius: 24px 0px 0px 24px;
+}
+
 /* Acomodamos detalles */
-main .publica-2 .publica-caja .publica-texto h2{
+
+main .publica-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 0px 24px 24px 0px;
+}
+
+main .publica-2 .publica-texto{
+    width: 100%;
+}
+
+/* Textos y botones TODAS las caja a publicar */
+main .publica-2 .publica-texto .publicar-btn{
+    width: 40px;
+    height: 40px;
+    margin: 0px 30px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+}
+
+main .publica-2  .publica-texto .active{
+    background: #FFA078;
+
+}
+
+main .publica-2 .publica-texto span {
+    margin-left: -25px;
+    font-size: 1rem;
+}
+
+main .publica-2 .publica-texto p{
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #B1B8BE;
+    margin: 30px 30px 10px 25px;
+}
+
+main .publica-2 .publica-texto h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+/* Texto de la parte de abajo de la caja de publicar */
+main .publica-2  .publica-texto h2{
     margin: 5px 30px 10px 25px;
 }
 
 /* Personalizamos toda la caja 2 */
-main .publica-2 .publica-caja .publica-texto h3{
+main .publica-2  .publica-texto h3{
     font-family: 'Nunito Sans';
     font-weight: 700;
     font-size: 1rem;
@@ -709,7 +1663,7 @@ main .publica-2 .publica-caja .publica-texto h3{
     margin: 45px 30px 10px 25px;
 }
 
-main .publica-2 .publica-caja .publica-texto .texto-img{
+main .publica-2  .publica-texto .texto-img{
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
@@ -721,11 +1675,13 @@ main .publica-2 .publica-caja .publica-texto .texto-img{
     justify-content: center;
 }
 
-main .publica-2 .publica-caja .publica-texto input {
+main .publica-2  .publica-texto input {
     display: block;
     margin: auto;
     padding: 0px 0px 70px 0px;
 }
+
+
 
 /* Personalizo el mapa */
 main .publica-2 .datos-ubicacion h2{
@@ -740,7 +1696,7 @@ main .datos-mapa #map {
 }
 
 /* Personalizando Datos de formulario */
-main .publica-2 .publica-caja .publica-texto .datos-formulario form div .descripcion {
+main .publica-2 .publica-texto .datos-formulario form div .descripcion {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
@@ -753,7 +1709,7 @@ main .publica-2 .publica-caja .publica-texto .datos-formulario form div .descrip
 
 }
 
-main .publica-2 .publica-caja .publica-texto .datos-formulario form div textarea {
+main .publica-2 .publica-texto .datos-formulario form div textarea {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -767,7 +1723,7 @@ main .publica-2 .publica-caja .publica-texto .datos-formulario form div textarea
 }
 
 /* Personalizo caja de select */
-main .publica-2 .publica-caja .publica-texto .datos-formulario form .select {
+main .publica-2 .publica-texto .datos-formulario form .select {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -778,7 +1734,7 @@ main .publica-2 .publica-caja .publica-texto .datos-formulario form .select {
 }
 
 /* Le doy estilo a la caja */
-main .publica-2 .publica-caja .publica-texto .datos-formulario form label{
+main .publica-2 .publica-texto .datos-formulario form label{
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
@@ -790,7 +1746,7 @@ main .publica-2 .publica-caja .publica-texto .datos-formulario form label{
     margin-top: 10px;
 }
 
-main .publica-2 .publica-caja .publica-texto .datos-formulario form select {
+main .publica-2 .publica-texto .datos-formulario form select {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -805,7 +1761,7 @@ main .publica-2 .publica-caja .publica-texto .datos-formulario form select {
     margin: 5px;
 }
 
-main .publica-2 .publica-caja .publica-texto .datos-formulario form .fecha{
+main .publica-2 .publica-texto .datos-formulario form .fecha{
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
@@ -823,7 +1779,7 @@ main .publica-2 .publica-caja .publica-texto .datos-formulario form .fecha{
 }
 
 /* Customizando el boton enviar  */
-main .publica-2 .publica-caja .publica-texto .datos-formulario button {
+main .publica-2  .publica-texto .datos-formulario button {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -842,12 +1798,244 @@ main .publica-2 .publica-caja .publica-texto .datos-formulario button {
 }
 
 
+/* Responsive Desktop Y tablet */
+
+@media screen and (max-width:990px) {
+
+    /* Textos y botones TODAS las caja a publicar */
+    main .publica-2 .publica-texto .publicar-btn{
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    main .publica-2 .publica-texto span {
+        margin-left: -25px;
+        font-size: 0.9rem;
+    }
+    
+    main .publica-2 .publica-texto p{
+        font-size: 0.9rem;
+    }
+    
+    main .publica-2 .publica-texto h2{
+        font-size: 0.9rem;
+    }
+    
+    /* Personalizamos toda la caja 2 */
+    main .publica-2  .publica-texto h3{
+        font-size: 0.9rem;
+    }
+    
+    main .publica-2  .publica-texto .texto-img{
+        font-size: 0.9rem;
+    }
+    
+    main .publica-2  .publica-texto input {
+        display: block;
+        margin: auto;
+        font-size: 0.7rem;
+        padding: 0px 0px 50px 0px;
+    }
+    
+    main .datos-mapa #map {
+        width: 100%;
+        height: 200px;
+        border-radius: 15px;
+    }
+    
+    /* Personalizando Datos de formulario */
+    main .publica-2 .publica-texto .datos-formulario form div .descripcion {
+        font-size: 0.9rem;
+    }
+    
+    main .publica-2 .publica-texto .datos-formulario form div textarea {
+        height: 135px;
+    }
+    
+    /* Le doy estilo a la caja */
+    main .publica-2 .publica-texto .datos-formulario form label{
+        font-size: 0.9rem;
+    }
+    
+    main .publica-2  .publica-texto .datos-formulario button {
+        padding: 10px;
+        width: 100%;
+        height: 46px;
+        margin-top: 40px;
+    }
+    
+ }
+
+
+ @media screen and (max-width:768px) {
+    
+    main .grid-container-publicar-2 {
+        grid-template-columns: 100%;        
+    }
+
+    main .caja-img-2 {
+        display: none;
+    }
+
+    main .publica-2 {
+        margin-top: -5px;
+        border-radius: 0px;
+    }
+ }
+
+
+/* Responsive Celulares */
+
+@media screen and (max-width:500px) {
+    /* Acomodamos detalles */
+    main .publica-2 .publica-texto .publicar-btn{
+        width: 30px;
+        height: 30px;
+        margin: 0px 30px;
+    }
+
+    main .caja-img-2 {
+        display: none;
+    }
+    
+    
+    main .publica-2 .publica-texto span {
+        font-size: 0.8rem;
+    }
+    
+    main .publica-2 .publica-texto p{
+        font-size: 0.8rem;
+    }
+    
+    main .publica-2 .publica-texto h2{
+        font-size: 1rem;
+    }
+    
+    
+    /* Personalizo caja de select */
+    main .publica-2 .publica-texto .datos-formulario form .select {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }   
+}
+
+
+@media screen and (max-width:400px) {
+    /* Acomodamos detalles */
+    main .publica-2 {
+        padding: 10px;
+    }
+    
+    main .publica-2 .publica-texto .publicar-btn{
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+    }
+
+    main .publica-2 .publica-texto span {
+        font-size: 0.7rem;
+    }
+    
+    main .publica-2 .publica-texto p{
+        font-size: 0.8rem;
+    }
+    
+    main .publica-2 .publica-texto h2{
+        font-size: 1rem;
+    }
+    
+    
+    /* Personalizo caja de select */
+    main .publica-2 .publica-texto .datos-formulario form .select {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    
+}
+
+
 /* **************************************************** ****************************************************/
 /* Estilo de la terce Caja del apartado publicar */
 
-main .publica-3 {
+main .grid-container-publicar-3  {
     display: none;
+    width: 95%;
+    margin: 5px auto;
+    grid-template-columns: 1fr 1fr;
 }
+
+main .caja-img-3 img {
+    width: 100%;
+    border-radius: 24px 0px 0px 24px;
+}
+
+/* Acomodamos detalles */
+main .publica-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 0px 24px 24px 0px;
+}
+
+main .publica-3 .publica-texto{
+    width: 100%;
+}
+
+/* Textos y botones TODAS las caja a publicar */
+main .publica-3 .publica-texto .publicar-btn{
+    width: 40px;
+    height: 40px;
+    margin: 0px 30px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+}
+
+main .publica-3  .publica-texto .active{
+    background: #FFA078;
+
+}
+
+main .publica-3 .publica-texto span {
+    margin-left: -25px;
+    font-size: 1rem;
+}
+
+main .publica-3 .publica-texto p{
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #B1B8BE;
+    margin: 30px 30px 10px 25px;
+}
+
+main .publica-3 .publica-texto h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+    margin: 45px 30px 10px 25px;
+}
+
 
 main .publica-3 .publica-texto .contacto-publicar form .datos-caja{
     display: grid;
@@ -899,6 +2087,7 @@ main .publica-3 .publica-texto .contacto-publicar form .datos-caja input {
     align-items: center;
     padding: 8px 16px;
     gap: 10px;
+    width: 100%;
     height: 40px;
     background: #FFFFFF;
     border: 1px solid #B1B8BE;
@@ -907,13 +2096,13 @@ main .publica-3 .publica-texto .contacto-publicar form .datos-caja input {
 
 /* Personalizando texto del inferior de la caja */
 
-main .publica-3 .publica-caja .caja-boton-enviar{
+main .publica-3  .caja-boton-enviar{
     width: 100%;
     text-align: center;
     margin-top: 50%;
 }
 
-main .publica-3 .publica-caja .caja-boton-enviar h3 {
+main .publica-3 .caja-boton-enviar h3 {
     font-family: 'Nunito Sans';
     font-weight: 400;
     font-size: 0.9rem;
@@ -922,7 +2111,12 @@ main .publica-3 .publica-caja .caja-boton-enviar h3 {
     color: #B1B8BE;
 }
 
-main .publica-3 .publica-caja .caja-boton-enviar button {
+main .publica-3 .caja-boton-enviar .publicar-btn {
+    width: 100%;
+    margin: 0 auto;
+}
+
+main .publica-3 .caja-boton-enviar button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -937,25 +2131,232 @@ main .publica-3 .publica-caja .caja-boton-enviar button {
     cursor: pointer;
 }
 
+
+/* Responsive Desktop*/
+
+@media screen and (max-width:990px) {
+
+    /* Textos y botones TODAS las caja a publicar */
+    main .publica-3 .publica-texto .publicar-btn{
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    main .publica-3 {
+        padding: 20px 10px;
+    }
+
+    main .publica-3 .publica-texto span {
+        margin-left: -25px;
+        font-size: 0.8rem;
+    }
+    
+    main .publica-3 .publica-texto p{
+        font-size: 0.9rem;
+    }
+    
+    main .publica-3 .publica-texto h2{
+        font-size: 0.9rem;
+    }
+
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja label {
+        font-size: 1rem;
+    }
+    
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja input {
+        width: 90%;
+        padding: 8px 10px;
+        height: 30px;
+
+    }
+
+ }
+
+/*Responsive Tablet y celulares  */
+
+@media screen and (max-width:768px){
+
+    main .grid-container-publicar-3  {
+        grid-template-columns: 100%;
+    }
+    
+    main .caja-img-3 {
+        display: none;
+    }
+
+    /* Textos y botones TODAS las caja a publicar */
+    main .publica-3 .publica-texto .publicar-btn{
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    main .publica-3 {
+        padding: 20px 10px;
+    }
+
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja{
+        grid-template-columns: 50%;
+    }
+
+    main .publica-3 .publica-texto span {
+        font-size: 1rem;
+    }
+    
+    main .publica-3 .publica-texto p{
+        font-size: 0.9rem;
+    }
+    
+    main .publica-3 .publica-texto h2{
+        font-size: 1rem;
+    }
+
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja input {
+        width: 100%;
+    }
+
+    main .publica-3 .caja-boton-enviar {
+        margin-top: 30%;
+    }
+
+}
+
+
+@media screen and (max-width:500px){
+
+    main .publica-3 {
+        padding: 10px;
+    }
+    
+    main .publica-3 .publica-texto .publicar-btn{
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+    }
+
+    main .publica-3 .publica-texto span {
+        font-size: 0.7rem;
+    }
+    
+
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+    }
+
+    main .publica-3 .publica-texto p{
+        font-size: 0.9rem;
+    }
+    
+    main .publica-3 .publica-texto h2{
+        font-size: 1rem;
+    }
+
+
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja label {
+        font-size: 1rem;
+    }
+    
+    main ,.publica-3 .publica-texto .contacto-publicar form .datos-caja .primeros-datos{
+        margin: 20px 0px;
+    }
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja input {
+        width: 100%;
+        padding: 15px 30px;
+    }
+
+    main .publica-3 .caja-boton-enviar {
+        margin-top: 20%;
+    }
+}
 /* **************************************************** ****************************************************/
 /* Apartado de Perritos Perdidos */
 
-/* Estilo caja Filter */
-main .container-pPerdidos {
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-row: auto;
-    margin: 10px;
+
+
+
+
+
+/* Tenessss que poner grid  a las imagenes pero antes tenes que volver a acomdor los divs de cada card para que cuando pongas 1fr 1fr 1fr se acomoden solo*/
+
+/* En tablet sacamos el modelo celular pero en grande */
+
+/* Terminalo en la noche el map lo haces al mediodia */
+
+
+/* Caja que estara oculta para poder ver el filtro y se habilitara en tablet Y mobile */
+main section .cajas-filtros-maps {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    margin: 20px 0px;
 }
 
+main section .cajas-filtros-maps .caja-filtros {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 17px;
+    gap: 8px;
+    width: 182px;
+    font-size: 1rem;
+    height: 48px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.14);
+    border-radius: 24px;
+    cursor: pointer;
+    user-select: none;
+} 
+
+/* Segundo filtro/maps */
+
+main section .cajas-filtros-maps .caja-maps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+    padding: 12px 17px;
+    gap: 8px;
+    width: 182px;
+    height: 48px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.14);
+    border-radius: 24px;
+    cursor: pointer;
+    user-select: none;
+} 
+
+/* Estilo caja Filter */
+main .container-pPerdidos {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/* Caja de filtros */
 main .container-pPerdidos .filter {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin: 0 auto;
     height: 100%;
     background: #FFFFFF;
     box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
     border-radius: 24px;
+}
+
+main .container-pPerdidos .filter i {
+    display: none;
 }
 
 main .container-pPerdidos .filter-caja  {
@@ -964,19 +2365,18 @@ main .container-pPerdidos .filter-caja  {
     align-items: flex-start;
     padding: 24px;
     gap: 24px;
-    width: 318px;
+    width: 100%;
     height: 100%;
 }
 
 /* Estilo titulo de caja filter*/
-
 main .container-pPerdidos .filter-caja div h2 {
-    width: 270px;
+    width: 100%;
     height: 28px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 28px;
     display: flex;
     align-items: center;
@@ -984,12 +2384,11 @@ main .container-pPerdidos .filter-caja div h2 {
 }
 
 /* Estilo selects y labels de las categorias */
-
 main .container-pPerdidos .filter-caja div h3 {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     display: flex;
     align-items: center;
@@ -999,16 +2398,17 @@ main .container-pPerdidos .filter-caja div h3 {
 
 main .container-pPerdidos .filter-caja .filter-caja-categorias {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
     gap: 8px;
 }
 
-main .container-pPerdidos .filter-caja .filter-caja-categorias input {
-    width: 18px;
-    height: 18px;
-    background: #FFA078;
+main .container-pPerdidos .filter-caja .filter-caja-categorias input{
+    background-color: #FFA078;
+    width: 14px;
+    height: 14px;
 }
 
 main .container-pPerdidos .filter-caja .filter-caja-categorias label {
@@ -1017,47 +2417,47 @@ main .container-pPerdidos .filter-caja .filter-caja-categorias label {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     color: #2F2F2F;
     margin: 0px 10px;
 }
 
 /* Select de categoria de Razas */
-
 main .container-pPerdidos .filter-caja .filter-caja-categorias-raza {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
     gap: 8px;
-    width: 270px;
+    width: 100%;
     height: 72px;
 }
 
 main .container-pPerdidos .filter-caja .filter-caja-categorias-raza label {
-    width: 270px;
+    width: 100%;
     height: 24px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     display: flex;
     align-items: center;
     color: #2F2F2F;
 }
 
+main .container-pPerdidos .filter-caja .filter-caja-categorias-raza .pSelect{
+    width: 100%;
+}
+
 main .container-pPerdidos .filter-caja .filter-caja-categorias-raza select {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 8px 16px;
     gap: 10px;
-    width: 270px;
+    width: 100%;
     height: 40px;
     background: #FFFFFF;
     border-radius: 8px;
+
 }
 
 /* Apartado de las cajas donde se piden los datos */
@@ -1067,7 +2467,7 @@ main .container-pPerdidos .filter-caja-datos {
     align-items: flex-start;
     padding: 0px;
     gap: 12px;
-    width: 270px;
+    width: 100%;
     height: 240px;
 }
 
@@ -1077,17 +2477,21 @@ main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos {
     align-items: flex-start;
     padding: 0px;
     gap: 8px;
-    width: 270px;
+    width: 100%;
     height: 72px;
 }
 
+main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos .pSelect {
+    width: 100%;
+}
+
 main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos label {
-    width: 270px;
+    width: 100%;
     height: 24px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     display: flex;
     align-items: center;
@@ -1097,12 +2501,13 @@ main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos label {
 main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos select {
     box-sizing: border-box;
     display: flex;
+    background-color: yellow;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 8px 16px;
     gap: 10px;
-    width: 270px;
+    width: 100%;
     height: 40px;
     background: #FFFFFF;
     border: 1px solid #B1B8BE;
@@ -1112,21 +2517,18 @@ main .container-pPerdidos .filter-caja-datos .filter-caja-pedir-datos select {
 /* Boton de continuar de la caja de filtros */
 main  .container-pPerdidos .filter-caja .filter-btn {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     padding: 24px;
     gap: 10px;
     width: 100%;
-    height: 96px;
 }
 
 main .container-pPerdidos .filter-caja .filter-btn  button{
-    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
     padding: 12px 24px;
     gap: 10px;
     height: 48px;
@@ -1138,12 +2540,12 @@ main .container-pPerdidos .filter-caja .filter-btn  button{
 }
 
 main .container-pPerdidos .filter-caja .filter-btn a {
-    width: 222px;
+    width: 100%;
     height: 24px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     display: flex;
     align-items: center;
@@ -1152,30 +2554,26 @@ main .container-pPerdidos .filter-caja .filter-btn a {
     text-decoration: none;
 }
 
+
 /* **************************************************** ****************************************************/
 /* Parte main de la pagina perdidos */
 
-main section .apartado-perritos {
-    margin: 0px 10px;
-}
-main section .apartado-perritos .titulo-caja {
+main .cards .apartado-perritos .titulo-caja {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     margin: 16px 0px;
 }
 
-main section .apartado-perritos .titulo-caja .titulo-caja-migas {
+main .cards .apartado-perritos .titulo-caja .titulo-caja-migas {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 16px 0px;
-    gap: 16px;
     height: 56px;
 }
 
-main section .apartado-perritos .titulo-caja .titulo-caja-migas h3 {
+main .cards .apartado-perritos .titulo-caja .titulo-caja-migas h3 {
     width: 44px;
     height: 24px;
     font-family: 'Nunito Sans';
@@ -1188,12 +2586,12 @@ main section .apartado-perritos .titulo-caja .titulo-caja-migas h3 {
     color: #2F2F2F;
 }
 
-main section .apartado-perritos .titulo-caja .titulo-caja-migas span {
+main .cards .apartado-perritos .titulo-caja .titulo-caja-migas span {
     width: 24px;
     height: 24px;
 }
 
-main section .apartado-perritos .titulo-caja .titulo-perritos {
+main .cards .apartado-perritos .titulo-caja .titulo-perritos {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -1204,26 +2602,26 @@ main section .apartado-perritos .titulo-caja .titulo-perritos {
     width: 100%;
 }
 
-main section .apartado-perritos .titulo-caja .titulo-perritos h1{
-    width: 90%;
+main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
+    width: 100%;
     height: 38px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 1.7rem;
     line-height: 38px;
     display: flex;
     align-items: center;
     color: #2F2F2F;
 }
 
-main section .apartado-perritos .titulo-caja .titulo-perritos h4 {
+main .cards .apartado-perritos .titulo-caja .titulo-perritos h4 {
     width: 25%;
     height: 24px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 0.8rem;
     line-height: 24px;
     display: flex;
     align-items: center;
@@ -1233,12 +2631,62 @@ main section .apartado-perritos .titulo-caja .titulo-perritos h4 {
 /* **************************************************** ****************************************************/
 /* Apartado de "galeria" de cards */
 
-main section .apartado-perritos .aparatado-perritos-caja-card {
-    width: 100%;
-    background-color: lightgreen;
+.apartado-perritos .apartado-perritos-caja-card {
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 5px;  
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0px;
+    gap: 12px;    
+}
+
+/* Haciendo las cards */
+/* Personalizando apartodo 1 */
+.apartado-perritos .apartado-perritos-caja-card .card{
+    width: 200px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.apartado-perritos .apartado-perritos-caja-card .card img{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.apartado-perritos .apartado-perritos-caja-card .card .card-texts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 5px;
+    gap: 4px;
+    width: 100%;
+    height: 84px;
+}
+
+
+.apartado-perritos .apartado-perritos-caja-card .card .card-texts h3{
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+.apartado-perritos .apartado-perritos-caja-card  .card .card-texts p{
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.7rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
 }
 
 /* Apartado paginacion de las cards */
@@ -1257,6 +2705,8 @@ main section .caja-paginacion{
 main section .caja-paginacion .pagina-anterior, .pagina-siguiente {
     color: #2F2F2F;
     font-size: 1.5rem;
+    margin-top: 10%;
+    margin-bottom: 10px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -1267,6 +2717,8 @@ main section .caja-paginacion .pagina-1, .pagina-2, .pagina-3, .pagina-4, .pagin
     align-items: center;
     padding: 8px;
     gap: 10px;
+    margin-top: 10%;
+    margin-bottom: 10px;
     width: 40px;
     height: 40px;
     background: #FFFFFF;
@@ -1277,15 +2729,1580 @@ main section .caja-paginacion .pagina-1, .pagina-2, .pagina-3, .pagina-4, .pagin
 
 
 /* **************************************************** ****************************************************/
-
-
 /* Aparatado de Maps */
-main .caja-mapa {
-    margin: 50px 10px;
+
+main .map {
+    width: 100%;
 }
-main .mapa-encontrar #map {
+main .map .caja-mapa {
+    margin: 35% 0px;
+}
+
+main section .caja-mapa  i {
+    display: none;
+    z-index: 1;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    right: 0px;
+    margin: 15px 70px;
+    cursor: pointer;
+}
+main .map .caja-mapa .mapa-encontrar #map {
 	height: 600px;
 	width: 100%;
     margin: 0 auto;
     border-radius: 15px;
+}
+
+/* ******************************************************** */
+/* Responsive Desktop y mobile */
+
+@media screen and (max-width:1200px){
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
+        font-size: 1.5rem;
+    }
+    
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h4 {
+        width: 30%;
+        font-size: 0.75rem;
+    }
+
+    /* Haciendo las cards */
+    /* Personalizando apartodo 1 */
+    .apartado-perritos .apartado-perritos-caja-card .card{
+        width: 145px;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+    }
+}
+
+ @media screen and (max-width:1000px) {
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
+        font-size: 1.2rem;
+    }
+    
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h4 {
+        width: 35%;
+        font-size: 0.8rem;
+        height: 38px;
+    }
+
+    .apartado-perritos .apartado-perritos-caja-card .card{
+        width: 125px;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+    }
+ }
+
+ @media screen and (max-width:920px) {
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
+        font-size: 1.2rem;
+    }
+    
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h4 {
+        width: 35%;
+        font-size: 0.8rem;
+        height: 38px;
+    }
+
+    main .container-pPerdidos .filter-caja .filter-caja-categorias label {
+        font-size: 0.8rem;    
+    }
+    
+
+    .apartado-perritos .apartado-perritos-caja-card .card{
+        width: 120px;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+    }
+}
+
+/* ////////////////////////////////////////////// */
+/* Responsive Celulares y tablet*/
+
+
+@media screen and (max-width:768px) {
+
+    main section .cajas-filtros-maps {
+        display: flex;
+    }
+
+    main .container-pPerdidos {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+
+    main .container-pPerdidos .filter {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        margin: 0 auto;
+        width:  100%;
+        height: 520px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border-radius: 0px;
+        overflow: scroll;
+    }
+
+    main .container-pPerdidos .filter i {
+        display: block;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 0px;
+        margin: 0px 20px;
+        cursor: pointer;
+    }
+
+    main .container-pPerdidos .map {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        margin: 0 auto;
+        width:  100%;
+        height: 620px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+
+    main section .caja-mapa  i {
+        display: block;
+        z-index: 1;
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 0px;
+        margin: 15px 70px;
+        cursor: pointer;
+    }
+
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
+        font-size: 1.6rem;
+    }
+    
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h4 {
+        width: 35%;
+        font-size: 1rem;
+        height: 38px;
+    }
+
+    main .container-pPerdidos .filter-caja .filter-caja-categorias label {
+        font-size: 0.8rem;    
+    }
+    
+
+    .apartado-perritos .apartado-perritos-caja-card .card{
+        width: 100%;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
+        font-size: 1rem;
+    }
+    
+    main .cards .apartado-perritos .titulo-caja .titulo-perritos h4 {
+        width: 45%;
+        font-size: 0.65rem;
+    }
+
+    .apartado-perritos .apartado-perritos-caja-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        padding: 0px;
+        gap: 12px;    
+    }
+
+    main .cards .apartado-perritos .titulo-caja {
+        margin: 0;
+    }
+
+    .apartado-perritos .apartado-perritos-caja-card .card{
+        width: 100%;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **************************************************** ****************************************************/
+/* Apartado "Perritos Encontrados" */
+
+/* Texto de migas de pan */
+
+main section .texto-pagina-pE {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 48px;
+    gap: 16px;
+}
+
+main section .texto-pagina-pE h3 {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .texto-pagina-pE span {
+    width: 24px;
+    height: 24px;
+}
+
+/* Primera caja imagenes*/
+main section .container-grid-pE {
+    width: 95%;
+    margin: 10px auto;
+    height: auto;
+    display: grid;
+    grid-template-columns:  3fr 2fr 2fr;
+}
+
+main section .caja-1-pE {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+}
+
+main section .caja-1-pE .container-2 .swiper-2 {
+    width: 100%;
+    height: 100%;
+}
+
+main section .caja-1-pE .container-2 .swiper-slide-2 {
+    position: relative;
+    text-align: start;
+    font-size: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    border-radius: 15px;
+}
+
+main section .caja-1-pE .container-2 .swiper-slide-2 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Medidas de cajas de las miniaturas */
+main section .caja-1-pE .caja-miniaturas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 97px;
+    margin: 0px 4.5px;
+}
+
+/* Tamaño de imagenes */
+
+main section .caja-1-pE img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+main section .caja-1-pE .caja-miniaturas img {
+    width: 15%;
+    height: auto;
+}
+
+/* Caja de texto del cuadro ¿perdiste a tu perro ? */
+
+main section .caja-1-pE .caja-pP-texto .banner-pPerdido {
+    width: 10px;
+    position: absolute;
+    left: auto;
+    top: 805px
+}
+
+/*********************************** ***********************************/
+/* Segunda Caja textos */
+
+/* Medidas de cajas junto con sus estilos de textos */
+main section .caja-2-pE {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+
+main section .caja-2-pE .card1-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    width: 90%;
+    height: 378px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    margin: 0 auto;
+}
+main section .caja-2-pE .card2-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    width: 90%;
+    height: 246px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    margin: 0 auto;
+}
+
+main section .caja-2-pE .card3-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    width: 90%;
+    height: 208px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    margin: 0 auto;
+}
+
+/* Estilos propios de cada card */
+
+/* Card1 */
+main section .caja-2-pE .card1-texto h2, .card2-texto h2, .card3-texto h2 {
+    height: 28px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .caja-2-pE .card1-texto .card-caja {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 52px;
+}
+
+main section .caja-2-pE .card1-texto .card-caja img {
+    width: 52px;
+    height: 52px;
+}
+
+main section .caja-2-pE .card1-texto .card-caja .card-caja-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+    height: 52px;
+}
+
+main section .caja-2-pE .card1-texto .card-caja .card-caja-texto h3 {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .caja-2-pE .card1-texto .card-caja .card-caja-texto h4 {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .caja-2-pE .card1-texto .card-caja-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    width: 100%;
+}
+
+main section .caja-2-pE .card1-texto .card-caja-2 h3 {
+    width: 100%;
+    height: 100%;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2F2F2F;
+}
+
+main section .caja-2-pE .card1-texto .card-caja-2 h4 {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #FFA078;
+    user-select: none;
+}
+
+main section .caja-2-pE .card1-texto .card-caja-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+    width: 100%;
+    height: 80px;
+    background: #FFE4CB;
+    border-radius: 24px;
+}
+
+main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 100%;
+    height: 48px;
+}
+
+main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h3 {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h4 {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+
+/******* Card2 ********/
+
+main section .caja-2-pE .card2-texto .card-caja {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+}
+
+main section .caja-2-pE .card2-texto .card-caja .caja, .caja-fecha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 132px;
+}
+
+main section .caja-2-pE .card2-texto .card-caja .caja {
+    border-right: 1px solid #B1B8BE
+}
+
+main section .caja-2-pE .card2-texto .card-caja .caja h2, .caja-fecha h2 {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #FFA078;
+}
+
+main section .caja-2-pE .card2-texto .card-caja .caja h3 {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #2F2F2F;
+}
+
+main section .caja-2-pE .card2-texto .card-caja .caja h4, .caja-fecha h4 {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #FFA078;
+}
+
+main section .caja-2-pE .card2-texto .card-caja .caja h5, h3{
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #2F2F2F;
+}
+
+/******* Card3 ********/
+
+main section .caja-2-pE .card3-texto .card-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 384px;
+    height: 52px;
+}
+
+main section .caja-2-pE .card3-texto .card-caja .card-phone, .card-email{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 384px;
+    height: 24px;
+}
+
+main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
+    width: 344px;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+main section .caja-2-pE .card3-texto button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 100%;
+    height: 48px;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+    border-radius: 16px;
+    cursor: pointer ;
+}
+
+main section .caja-2-pE .card3-texto button a {
+    width: 98px;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #2F2F2F;
+}
+
+/*********************************** ***********************************/
+/* Caja 3 Mapa */
+
+main section .caja-3-pE .caja-mapa-2 {
+    width: 100%;
+    height: 100%;
+}
+
+main .mapa-encontrar #map {
+    width: 100%;
+    border-radius: 15px;
+    height: 880px;
+}
+
+
+/* Responsive Desktop y tablet */
+
+@media screen and (max-width:768px){
+    main section .caja-2-pE .card1-texto {
+        width: 80%;
+        height: 40%;
+    }
+    main section .caja-2-pE .card2-texto {
+        width: 80%;
+    }
+
+    main section .caja-2-pE .card3-texto {
+        width: 80%;
+    }
+
+    /* Card1 */
+    main section .caja-2-pE .card1-texto h2, .card2-texto h2, .card3-texto h2 {
+        font-size: 1rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja {
+        height: 42px;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja img {
+        width: 42px;
+        height: 42px;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja .card-caja-texto h3 {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja .card-caja-texto h4 {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-2 h3 {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-2 h4 {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 {
+        height: 60px;
+        width: 85%;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h3 {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h4 {
+        font-size: 0.8rem;
+    }
+
+    /******* Card2 ********/
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h2, .caja-fecha h2 {
+        font-size: 0.9rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h3 {
+        font-size: 0.7rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h4, .caja-fecha h4 {
+        font-size: 0.9rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h5, h3{
+        font-size: 0.7rem;
+    }
+
+    /******* Card3 ********/
+
+    main section .caja-2-pE .card3-texto .card-caja {
+        width: 100% ;
+    }
+
+    main section .caja-2-pE .card3-texto .card-caja .card-phone, .card-email{
+        width: 100%;
+    }
+
+    main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
+        width: 344px;
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card3-texto button {
+        height: 40px;
+    }
+
+    main section .caja-2-pE .card3-texto button a {
+        font-size: 0.8rem;
+    }
+
+    /* Mapa */
+
+    main section .caja-3-pE .caja-mapa-2 {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    main .mapa-encontrar #map {
+        width: 100%;
+        height: 423px;
+    }
+}
+
+
+@media screen and (max-width:600px){
+
+    main section .container-grid-pE {
+        width: 95%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    main section .caja-1-pE {
+        width: 100%;
+    }
+
+    main section .caja-2-pE {
+        width: 100%;
+    }
+
+    main section .caja-3-pE {
+        width: 100%;
+    }
+
+    main section .texto-pagina-pE {
+        padding: 10px 18px;
+    }
+
+    main section .texto-pagina-pE h3 {
+        font-size: 0.75rem;
+        align-items: flex-start;
+        color: #2F2F2F;
+    }
+    
+    main section .texto-pagina-pE span {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Cars */
+    main section .caja-2-pE .card1-texto {
+        width: 100%;
+        height: 40%;
+    }
+    main section .caja-2-pE .card2-texto {
+        width: 100%;
+    }
+
+    main section .caja-2-pE .card3-texto {
+        width: 100%;
+    }
+
+    /* Card1 */
+
+    main section .caja-2-pE .card1-texto .card-caja-3 {
+        height: 50px;
+        width: 100%;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h3 {
+        font-size: 0.75rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h4 {
+        font-size: 0.75rem;
+    }
+
+    /******* Card2 ********/
+
+    main section .caja-2-pE .card2-texto .card-caja {
+        font-size: 0.7rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h2, .caja-fecha h2 {
+        font-size: 0.7rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h3 {
+        font-size: 0.6rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h4, .caja-fecha h4 {
+        font-size: 0.7rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h5, h3{
+        font-size: 0.6rem;
+    }
+
+    /******* Card3 ********/
+
+    main section .caja-2-pE .card3-texto .card-caja {
+        width: 100% ;
+    }
+
+    main section .caja-2-pE .card3-texto .card-caja .card-phone, .card-email{
+        width: 100%;
+    }
+
+    main section .caja-2-pE .card1-texto h2, .card2-texto h2, .card3-texto h2 {
+        font-size: 0.9rem;
+    }
+
+    main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
+        width: 100%;
+        font-size: 0.7rem;
+    }
+
+    main section .caja-2-pE .card3-texto button {
+        height: 40px;
+    }
+
+    main section .caja-2-pE .card3-texto button a {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-1pE .caja-pP img {
+        position: absolute;
+        left: auto;
+        bottom: 10px;
+    } 
+
+}
+
+
+
+/*********************************** *********************************** *********************************** ***********************************/
+
+/* Resgister */
+
+.container-register {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.container-register .caja-register {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 32px;
+    gap: 24px;
+    position: absolute;
+    width: 35%;
+    height: 830px;
+    left: 0;
+    top: 80px;
+    right: 0;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 24px;
+}
+
+.container-register .caja-register .container-caja-register {
+    width: 100%;
+}
+
+/* Register titulos */
+
+.container-register .caja-register form .form-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 100%;
+    height: 96px;
+}
+
+.container-register .caja-register form .form-titulo h2{
+    width: 100%;
+    height: 40px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+.container-register .caja-register form .form-titulo h3 {
+    width: 100%;
+    height: 48px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+/* Register inputs y labels */
+
+.container-register .caja-register form .datos-nombre{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 68px;
+    margin: 20px 0px;
+}
+
+.container-register .caja-register form .datos-register .datos-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+}
+
+.container-register .caja-register form .datos-register .datos-nombre label{
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+.container-register .caja-register form .datos-register .datos-nombre .datos-caja input{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+}
+
+/* Parte 2 de caja datos */
+
+.container-register .caja-register form .datos-register  .datos-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 152px;
+}
+
+.container-register .caja-register form .datos-register  .datos-2 .datos-caja-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+    height: 68px;
+}
+
+.container-register .caja-register form .datos-register  .datos-2 .datos-caja-2 label {
+    width: 100%;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+.container-register .caja-register form .datos-register .datos-2 .datos-caja-2 input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+}
+
+.container-register .caja-register form .datos-register .datos-2 .datos-caja-2 i {
+    position: absolute;
+    left: 85%;
+    top: 365px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* parte donde aceptan o no que se le enviee promociones */
+.container-register .caja-register form .datos-register .datos-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 48px;
+    margin: 30px 0px;
+}
+
+.container-register .caja-register form .datos-register .datos-checkbox input {
+    width: 20px;
+    height: 20px;
+}
+
+.container-register .caja-register form .datos-register .datos-checkbox h3 {
+    width: 100%;
+    height: 48px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+/* Boton enviar form register */
+
+.container-register .caja-register form input {
+    margin-top: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 100%;
+    height: 48px;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+    border-radius: 16px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    cursor: pointer;
+}
+
+/* Caja de google y facebook */
+
+
+.container-register .caja-register .google-facebook-caja{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 112px;
+}
+
+.container-register .caja-register .google-facebook-caja .caja-button {
+    width: 100%;
+}
+
+.container-register .caja-register .google-facebook-caja .caja-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 8px;
+    width: 100%;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container-register .caja-register .google-facebook-caja .caja-button a {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2F2F2F;
+    text-decoration: none;
+}
+
+.container-register .caja-register .google-facebook-caja .caja-button i {
+    font-size: 1rem;
+}
+
+/* texto de iniciar sesion además del de  politica y privacidad */
+
+.container-register .caja-register .datos-seguir-login {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.container-register .caja-register .datos-seguir-login h4, h5 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 5px 0px;
+}
+
+.container-register .caja-register .datos-seguir-login a {
+    text-decoration: none;
+    color: #FFA078;
+}
+
+
+/* Responsive Desktop y tablet */
+
+@media screen and (max-width:1024px) {
+    .container-register .caja-register {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width:790px) {
+    .container-register .caja-register {
+        width: 55%;
+    }
+}
+
+/* Responsive para celulares */
+@media screen and (max-width:620px) {
+    .container-register .caja-register {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .container-register .caja-register {
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width:450px) {
+    .container-register .caja-register {
+        width: 85%;
+    }
+
+    .container-register .caja-register form .form-titulo h2{
+        font-size: 1.75rem;
+    }
+    
+    .container-register .caja-register form .form-titulo h3 {
+        font-size: 0.75rem;
+    }
+
+    .container-register .caja-register form .datos-register .datos-2 .datos-caja-2 i {
+        left: 80%;
+    }
+
+    .container-register .caja-register form .datos-register .datos-checkbox h3 {
+        font-size: 0.7rem;
+    }
+    
+}
+
+@media screen and (max-width:390px) {
+    .container-register .caja-register {
+        width: 90%;
+    }
+
+    .container-register .caja-register form .datos-register .datos-checkbox h3 {
+        font-size: 0.65rem;
+    }
+
+    .container-register .caja-register .google-facebook-caja .caja-button a {
+        font-size: 0.85rem;
+    }
+
+    .container-register .caja-register .google-facebook-caja .caja-button i {
+        font-size: 0.85rem;
+    }
+    
+}
+
+/*********************************** *********************************** *********************************** ***********************************/
+/* Login */
+
+.container-login {
+    display: flex;
+    z-index: 20;
+}
+
+.container-login .caja-login{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 32px;
+    gap: 24px;
+    position: absolute;
+    width: 35%;
+    height: 670px;
+    left: 0;
+    top: 80px;
+    right: 0;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 24px;
+}
+
+.container-login .caja-login .container-caja-login {
+    width: 100%;
+}
+
+/* Boton cerrar form */
+.container-login .caja-login form .closed {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
+
+/* Register titulos */
+
+.container-login .caja-login form .form-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 100%;
+    height: 96px;
+    margin-bottom: 20px;
+}
+
+.container-login .caja-login form .form-titulo h2{
+    width: 100%;
+    height: 40px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+.container-login .caja-login form .form-titulo h3 {
+    width: 100%;
+    height: 40px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    color: #FFA078;
+}
+
+/* Register inputs y labels */
+/* Parte de caja datos */
+
+.container-login .caja-login form .datos-login  .datos-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 152px;
+}
+
+.container-login .caja-login form .datos-login  .datos-2 .datos-caja-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+    height: 68px;
+}
+
+.container-login .caja-login form .datos-login  .datos-2 .datos-caja-2 label {
+    width: 100%;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+}
+
+.container-login .caja-login form .datos-login .datos-2 .datos-caja-2 input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+}
+
+.container-login .caja-login form .datos-login .datos-2 .datos-caja-2 i {
+    position: absolute;
+    left: 85%;
+    top: 278px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Boton enviar form register */
+
+.container-login .caja-login form input {
+    margin-top: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 100%;
+    height: 48px;
+    background: #FFA078;
+    border: 2px solid #2F2F2F;
+    box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
+    border-radius: 16px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    cursor: pointer;
+}
+
+/* Caja de google y facebook */
+
+
+.container-login .caja-login .google-facebook-caja{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 112px;
+}
+
+.container-login .caja-login .google-facebook-caja .caja-button {
+    width: 100%;
+}
+
+.container-login .caja-login .google-facebook-caja .caja-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 8px;
+    width: 100%;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #B1B8BE;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container-login .caja-login .google-facebook-caja .caja-button a {
+    width: 100%;
+    height: 24px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2F2F2F;
+    text-decoration: none;
+}
+
+.container-login .caja-login .google-facebook-caja .caja-button i {
+    font-size: 1rem;
+}
+
+/* texto de iniciar sesion además del de  politica y privacidad */
+
+.container-login .caja-login .datos-seguir-login {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.container-login .caja-login .datos-seguir-login h4, h5 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 5px 0px;
+}
+
+.container-login .caja-login .datos-seguir-login a {
+    text-decoration: none;
+    color: #FFA078;
+}
+
+/* Responsive Desktop y tablet */
+
+@media screen and (max-width:1024px) {
+    .container-login .caja-login{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container-login .caja-login{
+        width: 55%;
+    }
+}
+
+/* Responsive celulares */
+
+@media screen and (max-width:620px) {
+    .container-login .caja-login {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .container-login .caja-login{
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width:450px) {
+    .container-login .caja-login{
+        width: 85%;
+    }
+
+    .container-login .caja-login form .form-titulo h2{
+        font-size: 1.8rem;
+    }
+    
+    .container-login .caja-login form .form-titulo h3 {
+        font-size: 1.5rem;
+    }
+
+
+    .container-login .caja-login form .datos-login .datos-2 .datos-caja-2 i {
+        left: 80%;
+    }
+
+}
+
+@media screen and (max-width:390px) {
+    .container-login .caja-login {
+        width: 90%;
+    }
+
+    .container-login .caja-login .google-facebook-caja .caja-button a {
+        font-size: 0.85rem;
+    }
+
+    .container-login .caja-login .google-facebook-caja .caja-button i {
+        font-size: 0.85rem;
+    }
+
+    .container-login .caja-login .datos-seguir-login h4, h5 {
+        font-size: 0.8rem;
+        margin: 20px 0px;
+    }
 }
