@@ -147,13 +147,15 @@
         <section class="banner">
             <img src="img/banner.png" alt="banner" class="banner-img">
             <div class="banner-text-box">
-                <h3 class="banner-text">
-                    ¿Encontraste un perrito y no localizas a su dueño?
-                </h3>
-                <p class="banner-parraf">
-                    Busca en nuestra lista de perritos perdidos, quizá su dueño lo este buscando, no esperes más. 
-                </p>
-                <a href="pages/perritosPerdidos.html"><button class="banner-btn">Ver perritos perdidos</button></a>
+                <div class="title-box">
+                    <h3 class="banner-text">¿Encontraste un perrito y no localizas a su dueño?</h3>
+                </div>
+                <div class="title-description">
+                    <p class="banner-parraf">Busca en nuestra lista de perritos perdidos, quizá su dueño lo este buscando, no esperes más.</p>
+                </div>
+                <div class="btn-box">
+                    <button class="banner-btn"><a href="pages/perritosPerdidos.html">Ver perritos perdidos</a></button>
+                </div>
             </div>
         </section>
         <!-- Mapa de Busqueda -->
@@ -173,8 +175,10 @@
                 </div>
                 <div class="banner-btn">
                     <form action="/">
-                        <input type="email" name="email" id="email" placeholder="Ingresa tu email: ejemplo@gmail.com" required>
-                        <input type="submit" value="Enviar Ahora" class="send">
+                        <div>
+                            <input type="email" name="email" id="email" placeholder="Ingresa tu email: ejemplo@gmail.com" required>
+                            <button class="send">Enviar</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -219,6 +223,6 @@
     <script src="js/carrousel.js"></script>
     <!-- Api Maps -->
     <script src="js/maps.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyC_MDeBRqYnd0M1O4c9kmwyP1vvwmOicBg" defer></script>
 </body>
 </html>
