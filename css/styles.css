@@ -19,6 +19,8 @@ body {
     width: 100%;
     font-size: 62.5%;
     background: #F4F3F1;
+    max-width: 1540px;
+    margin: 0 auto;
 }
 
 
@@ -136,9 +138,16 @@ header nav #check:checked ~ .nav-menu li {
 }
 
 @media screen and (min-width: 1024px) {
-    header nav .nav-menu li a {
+    header nav .nav-menu li a { 
         font-weight: 400;
         font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    header nav .nav-menu li a { 
+        font-weight: 400;
+        font-size: 1.4rem;
     }
 }
 
@@ -153,7 +162,6 @@ main .contenedor-presentacion {
 }
 
 /* Imagen */
-
 main .contenedor-presentacion .ilustracion {
     grid-area: ilustracion;
 }
@@ -233,67 +241,70 @@ main section .btn-ayuda .btn-ayuda-2 {
 
 /* Responsive desktop y Tablet*/
 
-@media screen  and (max-width: 1444px){
+@media screen  and (max-width: 2560px){
     main section .titulo-texto {
-        margin: 25px auto;
-        padding: 40px 0px;
+        margin: 15px auto;
+        padding: 30px 0px;
         text-align: center;
     }
 
     main section .titulo-texto h1 {
-        font-size: 1.8rem;
-        height: 102px;
+        width: 90%;
+        font-size: 2.3rem;
+        line-height: 30px;
+        width: 100%;
     }
 
     main section .titulo-texto p {
         width: 90%;
-        height: 52px;
-        font-family: 'Nunito Sans', sans-serif;
-        font-weight: 400;
-        font-size: 1.3rem;
-        margin: 0 auto;
-        line-height: 28px;
+        font-size: 1.5rem;
+        line-height: 48px;
         color: #2F2F2F;
     }
 
     main section .btn-ayuda {
-        margin: 24px 0px;
+        margin: 60px 0px;
     }
 }
 
 @media screen  and (max-width: 1024px){
     main section .titulo-texto {
         margin: 10px auto;
-        padding: 25px 0px;
+        padding: 15px 0px;
         text-align: center;
     }
 
     main section .titulo-texto h1 {
+        width: 100%;
         font-size: 1.5rem;
+        height: 60px;
+        line-height: none;
     }
 
     main section .titulo-texto p {
-        width: 100%;
-        font-size: 1rem;
+        font-size: 0.8rem;
+        height: 40px;
     }
 
     main section .btn-ayuda {
-        margin: 20px 0px;
+        margin: 40px 0px;
     }
+
 }
 
 @media screen  and (max-width: 900px){
 
     main section .titulo-texto h1 {
-        font-size: 1.2rem;
-        height: 35%;
-        line-height: 30px;
+        font-size: 1.15rem;
+        height: 50px;
     }
 
     main section .titulo-texto p {
         width: 90%;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        line-height: none;
         color: #2F2F2F;
+        line-height: 28px;
     }
 
     main section .btn-ayuda {
@@ -301,37 +312,46 @@ main section .btn-ayuda .btn-ayuda-2 {
     }
     
     main section .btn-ayuda .btn-ayuda-1 {
-        width: 45%;
+        width: 35%;
         margin-right: 10px;
     }
 
     main section .btn-ayuda .btn-ayuda-2 {
-        width: 45%;
-        margin-right: 10px;
+        width: 35%;
+    }
+    
+    main section .btn-ayuda, .btn-ayuda-2 {
+        margin: 12px 0px;
     }
 }
 
 @media screen  and (max-width: 780px){
 
     main section .titulo-texto {
-        padding: 15px 0px;
+        padding: 10px 0px;
     }
 
     main section .titulo-texto h1 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     main section .titulo-texto p {
+        line-height: 14px;
         font-size: 0.65rem;
     }
     
+    main section .btn-ayuda {
+        padding: 0px 0px;
+    }
+
     main section .btn-ayuda .btn-ayuda-1 {
-        width: 45%;
+        width: 35%;
         font-size: 0.65rem;
     }
 
     main section .btn-ayuda .btn-ayuda-2 {
-        width: 45%;
+        width: 35%;
+        padding: 10px 20px;
         font-size: 0.65rem;
     }
 
@@ -340,27 +360,27 @@ main section .btn-ayuda .btn-ayuda-2 {
 @media screen  and (max-width: 640px){
 
     main section .titulo-texto {
-        margin: 5px 0px;
-        padding: 10px 0px;
+        margin: 0px;
+        padding: 0px;
     }
 
     main section .titulo-texto h1 {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     main section .titulo-texto p {
         width: 85%;
-        font-size: 0.6rem;
+        font-size: 0.65rem;
         line-height: 20px;
     }
     
     main section .btn-ayuda .btn-ayuda-1 {
-        width: 30%;
-        font-size: 0.6  rem;
+        width: 35%;
+        font-size: 0.6rem;
     }
 
     main section .btn-ayuda .btn-ayuda-2 {
-        width: 30%;
+        width: 35%;
         font-size: 0.6rem;
     }
 }
@@ -392,24 +412,26 @@ main section .btn-ayuda .btn-ayuda-2 {
     }
 
     main section .titulo-texto h1 {
-        width: 90%;
-        font-size: 1.2rem;
+        width: 95%;
+        font-size: 1.3rem;
+        line-height: 24px;
     }
 
     main section .titulo-texto p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        line-height: 30px;
     }
     
     main section .btn-ayuda {
-        margin: 20px 0px;
+        margin: 30px 0px;
     }
 
     main section .btn-ayuda .btn-ayuda-1 {
-        width: 45%;
+        width: 40%;
     }
 
     main section .btn-ayuda .btn-ayuda-2 {
-        width: 45%;
+        width: 40%;
     }
 }
 
@@ -587,6 +609,31 @@ main .banner .banner-text-box a {
 
 /* Responsive tablet desktop */
 
+@media  screen and (max-width: 2560px) {
+    main .banner .banner-text-box {
+        gap: 14px;
+    }
+
+    main .banner .banner-text-box .banner-text {
+        width: 85%;
+        font-size: 1.5rem;
+        line-height: 28px;
+        color: #2F2F2F;
+    }
+    
+    /* Añadiendo estilo al parrafo del banner */
+    main .banner .banner-text-box .banner-parraf {
+        width: 85%;
+        font-size: 1.5rem;
+        margin-top: 5%;
+    }   
+
+    main .banner .banner-text-box .banner-btn {
+        margin-top: 15%;
+        padding: 20px 100px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
 
     main .banner .banner-text-box {
@@ -605,12 +652,18 @@ main .banner .banner-text-box a {
         width: 85%;
         font-size: 0.8rem;
     }
+
+    main .banner .banner-text-box .banner-btn {
+        margin: 0px;
+        padding: 20px 100px;
+    }
+
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
 
     main .banner {
-        padding: 30px 50px;
+        padding: 15px 30px;
     }
     
     main .banner .banner-text-box {
@@ -622,12 +675,14 @@ main .banner .banner-text-box a {
     }
     
     main .banner .banner-text-box .banner-parraf {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
     
     main .banner .banner-text-box .banner-btn {
         padding: 8px 14px;
+        font-size: 0.75rem;
     }
+
 }
 
 /* Responsive para celulares */
@@ -639,7 +694,7 @@ main .banner .banner-text-box a {
         "banner"
         "text"
         ;
-        padding: 40px 50px;
+        padding: 30px 40px;
     }
     
     main .banner .banner-text-box {
@@ -773,6 +828,41 @@ main .banner-2 .banner-email .banner-btn .send {
 }
 
 /* Responsive tablet y desktop */
+
+@media  screen and (max-width: 2560px) {
+    main .banner-2 {
+        padding: 30px 60px;
+    }
+    
+    main .banner-2 .banner-email .banner-text h3 {
+        width: 90%;
+        font-size: 1.5rem;
+        line-height: 28px;
+    }
+    
+    main .banner-2 .banner-email .banner-text p {
+        font-size: 1.5rem;
+        margin-top: 5%;
+        line-height: 32px;
+    }
+    
+    main .banner-2 .banner-email .banner-btn{
+        width: 100%;
+        margin-top: 5%;
+    }
+    
+    main .banner-2 .banner-email .banner-btn form input {
+        background: #FFFFFF;
+    }
+    
+    /*Boton enviar */
+    main .banner-2 .banner-email .banner-btn .send {
+        width: 30%;
+        font-size: 0.65rem;
+        text-align: center;
+    }
+}
+
 
 @media screen and (max-width:1074px) {
     main .banner-2 {
@@ -961,12 +1051,12 @@ main .banner-2 .banner-email .banner-btn .send {
 /* Footer del Home */
 
 footer {
-    width: 90%;
+    width: 95%;
     display: grid;
     grid-template-areas: 
     "caja1 caja2 caja3"
     ;
-    margin: 10px auto;
+    margin: 30px 0px 10px 0px;
     text-align: center;
 }
 
@@ -1151,7 +1241,6 @@ main section h3 span {
     margin: 0px 10px;
 }
 
-
 /* ******************************************* */
 
 /* Caja de de publicar de todas las cajas */
@@ -1319,6 +1408,43 @@ main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
 
 /* Responsive Tablet y Dekstop */
 
+ @media screen and (max-width:2560px) {
+  
+        main .publica .publica-texto span {
+            margin-left: -25px;
+            font-size: 1rem;
+        }
+        
+        main .publica .publica-texto p{
+            font-size: 1rem;
+        }
+        
+        main .publica .publica-texto h2{
+            font-size: 1rem;
+        }
+        main .publica  .publica-texto-2 h2 {
+            font-size:  1.5rem;
+        }
+        
+        main .publica  .publica-texto-2 p {
+            font-size: 1.3rem;
+        }
+        
+        main .publica  .publica-texto-2 .btn-publicar .perder-btn {
+            padding: 10px 24px;
+            width: 200px;
+            height: 38px;
+            font-size: 1rem;
+        }
+        
+        main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
+            padding: 10px 24px;
+            width: 200px;
+            height: 38px;
+            font-size: 1rem;
+        }
+ }
+
  @media screen and (max-width:930px) {
     
     /* Textos y botones TODAS las caja a publicar */
@@ -1444,7 +1570,7 @@ main .publica .publica-texto-2 .btn-publicar .encontrar-btn {
     }
     
     /* apartado de la derecha de publicar de todas las cajas*/
-    main .grid-container-publicar .publica{
+    main .grid-ppublicar .publica{
         border-radius: 0px;
         margin: 0;
     }
@@ -1800,6 +1926,64 @@ main .publica-2  .publica-texto .datos-formulario button {
 
 /* Responsive Desktop Y tablet */
 
+@media screen and (max-width:2560px) {
+        main .publica-2 .publica-texto .publicar-btn{
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+        }
+    
+        main .publica-2 .publica-texto span {
+            margin-left: -25px;
+            font-size: 0.9rem;
+        }
+        
+        main .publica-2 .publica-texto p{
+            font-size: 1.2rem;
+        }
+        
+        main .publica-2 .publica-texto h2{
+            font-size: 1.2rem;
+        }
+        
+        /* Personalizamos toda la caja 2 */
+        main .publica-2  .publica-texto h3{
+            font-size: 1.2rem;
+        }
+        
+        main .publica-2  .publica-texto .texto-img{
+            font-size: 1.2rem;
+        }
+        
+        main .publica-2  .publica-texto input {
+            display: block;
+            margin: auto;
+            font-size: 0.7rem;
+            padding: 0px 0px 50px 0px;
+        }
+        
+        /* Personalizando Datos de formulario */
+        main .publica-2 .publica-texto .datos-formulario form div .descripcion {
+            font-size: 1.2rem;
+        }
+        
+        main .publica-2 .publica-texto .datos-formulario form div textarea {
+            height: 135px;
+        }
+        
+        /* Le doy estilo a la caja */
+        main .publica-2 .publica-texto .datos-formulario form label{
+            font-size: 1.2rem;
+        }
+        
+        main .publica-2  .publica-texto .datos-formulario button {
+            padding: 20px;
+            width: 100%;
+            height: 46px;
+            margin-top: 40px;
+        }
+}
+
 @media screen and (max-width:990px) {
 
     /* Textos y botones TODAS las caja a publicar */
@@ -2134,6 +2318,39 @@ main .publica-3 .caja-boton-enviar button {
 
 /* Responsive Desktop*/
 
+@media screen and (max-width:2560px) {
+ 
+    main .publica-3 .publica-texto .publicar-btn{
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    main .publica-3 .publica-texto span {
+        margin-left: -25px;
+        font-size: 1.2rem;
+    }
+    
+    main .publica-3 .publica-texto p{
+        font-size: 1.5rem;
+    }
+    
+    main .publica-3 .publica-texto h2{
+        font-size: 1.5rem;
+    }
+
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja label {
+        font-size: 1.4rem;
+    }
+    
+    main .publica-3 .publica-texto .contacto-publicar form .datos-caja input {
+        width: 100%;
+        padding: 20px 40px;
+        height: 30px;
+
+    }
+}
+
 @media screen and (max-width:990px) {
 
     /* Textos y botones TODAS las caja a publicar */
@@ -2222,7 +2439,6 @@ main .publica-3 .caja-boton-enviar button {
 
 }
 
-
 @media screen and (max-width:500px){
 
     main .publica-3 {
@@ -2276,19 +2492,6 @@ main .publica-3 .caja-boton-enviar button {
 }
 /* **************************************************** ****************************************************/
 /* Apartado de Perritos Perdidos */
-
-
-
-
-
-
-/* Tenessss que poner grid  a las imagenes pero antes tenes que volver a acomdor los divs de cada card para que cuando pongas 1fr 1fr 1fr se acomoden solo*/
-
-/* En tablet sacamos el modelo celular pero en grande */
-
-/* Terminalo en la noche el map lo haces al mediodia */
-
-
 /* Caja que estara oculta para poder ver el filtro y se habilitara en tablet Y mobile */
 main section .cajas-filtros-maps {
     display: none;
@@ -2340,7 +2543,7 @@ main .container-pPerdidos {
     margin: 0 auto;
     display: grid;
     gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 /* Caja de filtros */
 main .container-pPerdidos .filter {
@@ -2705,7 +2908,7 @@ main section .caja-paginacion{
 main section .caja-paginacion .pagina-anterior, .pagina-siguiente {
     color: #2F2F2F;
     font-size: 1.5rem;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10px;
     font-weight: 600;
     cursor: pointer;
@@ -2717,7 +2920,7 @@ main section .caja-paginacion .pagina-1, .pagina-2, .pagina-3, .pagina-4, .pagin
     align-items: center;
     padding: 8px;
     gap: 10px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10px;
     width: 40px;
     height: 40px;
@@ -2758,20 +2961,18 @@ main .map .caja-mapa .mapa-encontrar #map {
 /* ******************************************************** */
 /* Responsive Desktop y mobile */
 
-@media screen and (max-width:1200px){
+@media screen and (max-width:2560px){
     main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
     
     main .cards .apartado-perritos .titulo-caja .titulo-perritos h4 {
-        width: 30%;
-        font-size: 0.75rem;
+        width: 40%;
+        font-size: 1rem;
     }
 
-    /* Haciendo las cards */
-    /* Personalizando apartodo 1 */
     .apartado-perritos .apartado-perritos-caja-card .card{
-        width: 145px;
+        width: 100%;
         border-radius: 15px;
         background-color: #FFFFFF;
     }
@@ -2786,12 +2987,6 @@ main .map .caja-mapa .mapa-encontrar #map {
         width: 35%;
         font-size: 0.8rem;
         height: 38px;
-    }
-
-    .apartado-perritos .apartado-perritos-caja-card .card{
-        width: 125px;
-        border-radius: 15px;
-        background-color: #FFFFFF;
     }
  }
 
@@ -2808,13 +3003,6 @@ main .map .caja-mapa .mapa-encontrar #map {
 
     main .container-pPerdidos .filter-caja .filter-caja-categorias label {
         font-size: 0.8rem;    
-    }
-    
-
-    .apartado-perritos .apartado-perritos-caja-card .card{
-        width: 120px;
-        border-radius: 15px;
-        background-color: #FFFFFF;
     }
 }
 
@@ -2931,44 +3119,6 @@ main .map .caja-mapa .mapa-encontrar #map {
         background-color: #FFFFFF;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* **************************************************** ****************************************************/
 /* Apartado "Perritos Encontrados" */
@@ -3416,17 +3566,123 @@ main .mapa-encontrar #map {
 
 /* Responsive Desktop y tablet */
 
-@media screen and (max-width:768px){
+@media screen and (max-width:2560px){
     main section .caja-2-pE .card1-texto {
-        width: 80%;
-        height: 40%;
+        width: 90%;
+        height: 52%;
     }
     main section .caja-2-pE .card2-texto {
-        width: 80%;
+        width: 90%;
+        height: 52%;
     }
 
     main section .caja-2-pE .card3-texto {
-        width: 80%;
+        width: 90%;
+        height: 52%;
+    }
+
+    /* Card1 */
+    main section .caja-2-pE .card1-texto h2, .card2-texto h2, .card3-texto h2 {
+        font-size: 1.3rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja img {
+        width: 52px;
+        height: 52px;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja .card-caja-texto h3 {
+        font-size: 1.1rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja .card-caja-texto h4 {
+        font-size: 1.1rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-2 h3 {
+        font-size: 1.1rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-2 h4 {
+        font-size: 1.1rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 {
+        height: 60px;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h3 {
+        font-size: 1rem;
+    }
+
+    main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h4 {
+        font-size: 1rem;
+    }
+
+    /******* Card2 ********/
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h2, .caja-fecha h2 {
+        font-size: 1.1rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h3 {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h4, .caja-fecha h4 {
+        font-size: 0.8rem;
+    }
+
+    main section .caja-2-pE .card2-texto .card-caja .caja h5, h3{
+        font-size: 0.8rem;
+    }
+
+    /******* Card3 ********/
+    main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    main section .caja-2-pE .card3-texto button {
+        height: 35px;
+    }
+
+    main section .caja-2-pE .card3-texto button a {
+        font-size: 1rem;
+    }
+
+    /* Mapa */
+    main section .caja-3-pE .caja-mapa-2 {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    main .mapa-encontrar #map {
+        width: 100%;
+        height: 650px;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    
+    main section .caja-1-pE .caja-miniaturas img {
+        width: 20%;
+        height: auto;
+    }
+    
+    main section .caja-2-pE .card1-texto {
+        width: 85%;
+        height: 40%;
+    }
+    main section .caja-2-pE .card2-texto {
+        width: 90%;
+    }
+
+    main section .caja-2-pE .card3-texto {
+        width: 90%;
     }
 
     /* Card1 */
@@ -3527,8 +3783,7 @@ main .mapa-encontrar #map {
 }
 
 
-@media screen and (max-width:600px){
-
+@media screen and (max-width:630px){
     main section .container-grid-pE {
         width: 95%;
         margin: 0 auto;
@@ -3546,6 +3801,10 @@ main .mapa-encontrar #map {
 
     main section .caja-3-pE {
         width: 100%;
+    }
+
+    main section .caja-3-pE .caja-mapa-2 {
+        margin: 20px 0px;
     }
 
     main section .texto-pagina-pE {
@@ -3658,20 +3917,15 @@ main .mapa-encontrar #map {
     display: flex;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
 }
 
 .container-register .caja-register {
     display: flex;
+    width: 40%;
     flex-direction: column;
     align-items: flex-start;
     padding: 40px 32px;
     gap: 24px;
-    position: absolute;
-    width: 35%;
-    height: 830px;
-    left: 0;
-    top: 80px;
     right: 0;
     margin: auto;
     background: #FFFFFF;
@@ -4031,12 +4285,6 @@ main .mapa-encontrar #map {
     align-items: flex-start;
     padding: 40px 32px;
     gap: 24px;
-    position: absolute;
-    width: 35%;
-    height: 670px;
-    left: 0;
-    top: 80px;
-    right: 0;
     margin: auto;
     background: #FFFFFF;
     border-radius: 24px;
