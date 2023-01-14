@@ -189,7 +189,7 @@ main section .titulo-texto h1 {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 2.3rem;
     line-height: 42px;
     margin: 0 auto;
     height: 96px;   
@@ -234,8 +234,7 @@ main section .btn-ayuda .btn-ayuda-2 {
 
     main section .titulo-texto h1 {
         font-weight: 700;
-        line-height: 40px;
-        font-size: 1.6rem;
+        font-size: 2.1rem;
     }
 
     main section .titulo-texto p {
@@ -252,7 +251,7 @@ main section .btn-ayuda .btn-ayuda-2 {
     }
     
     main section .titulo-texto h1 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         height: 30px;
     }
 
@@ -263,7 +262,8 @@ main section .btn-ayuda .btn-ayuda-2 {
 
 @media screen  and (max-width: 960px){
     main section .titulo-texto h1 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        width: 60%;
     }
 
     main section .titulo-texto p {
@@ -348,12 +348,12 @@ main section .btn-ayuda .btn-ayuda-2 {
     }
 
     main section .titulo-texto h1 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         line-height: 20px;
     }
 
     main section .titulo-texto p {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         line-height: 17px;
         height: 45px;
     }
@@ -407,6 +407,31 @@ main .carrousel h2 {
     background: #fff;
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 10px;
+    left: auto;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    font-size: 1.2rem;
+    content: 'prev';
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 10px;
+    right: auto;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: 'next';
+    font-size: 1rem;
 }
 
 .container .swiper-slide img {
@@ -524,8 +549,8 @@ main .banner .banner-text-box .banner-btn {
     cursor: pointer;
     background: #FADFC7;
     box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
-    border-radius: 24px;
-    border: 1px solid black;
+    border-radius: 16px;
+    border: 2px solid #2F2F2F;
 }
 
 main .banner .banner-text-box a {
@@ -767,7 +792,7 @@ main .banner-2 .banner-email .banner-btn form input {
 
 /*Boton enviar */
 main .banner-2 .banner-email .banner-btn .send {
-    width: 20%; 
+    width: 80px; 
     height: 50%;
     background: #FFF278;
     border: 2px solid #000000;
@@ -877,9 +902,6 @@ main .banner-2 .banner-email .banner-btn .send {
         margin-top: 10px;
     }
 
-    main .banner-2 .banner-email .banner-btn .send{
-        font-size: 0.5rem;
-    }
 }
 
 /* Responsive Celular */
@@ -891,7 +913,7 @@ main .banner-2 .banner-email .banner-btn .send {
         "banner2"
         "text2"
         ;
-        padding: 40px 50px;
+        padding: 40px 20px;
     }
     
     main .banner-2 .banner-email .banner-text h3 {
@@ -917,7 +939,6 @@ main .banner-2 .banner-email .banner-btn .send {
         "banner2"
         "text2"
         ;
-        padding: 40px 50px;
     }
     
     main .banner-2 .banner-email .banner-text h3 {
@@ -943,8 +964,9 @@ footer {
     width: 95%;
     display: grid;
     grid-template-areas: 
-    "caja1 caja2 caja3"
+    "caja1 caja2"
     ;
+    margin: 0 auto;
     margin: 30px 0px 10px 0px;
     text-align: center;
 }
@@ -982,8 +1004,7 @@ footer .caja-1 span {
 footer .caja-2 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 24px;
+    justify-content: space-evenly;
 }
 
 footer .publicar h2 a{
@@ -1029,14 +1050,6 @@ footer .publicaciones p a {
 }
 
 /* Apartado Sobre Huellas footer*/
-
-footer .caja-3 {
-    grid-area: caja3;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 24px;  
-}
 
 footer .aboutUs h2 a {
     font-family: 'Nunito Sans';
@@ -1087,9 +1100,10 @@ footer .legal p a {
 @media screen and (max-width:1024px) {
     footer {
         grid-template-areas: 
-        "caja1 caja1" 
-        "caja2 caja3"
+        "caja1" 
+        "caja2"
         ;
+        margin: 0 auto;
     }
     
     footer .caja-1 {
@@ -1102,12 +1116,21 @@ footer .legal p a {
         grid-template-areas: 
         "caja1" 
         "caja2"
-        "caja3"
         ;
+        margin: 0 auto;
     }
     
     footer .caja-1, .caja-2, .caja-3 {
         margin: 20px 0px;
+    }
+
+    footer .caja-2 {
+        display: grid;
+        grid-template-areas: 
+        "publicar1 publicar1"
+        "legal2 legal2"
+        ;
+        flex-direction: column;
     }
 }
 
@@ -1740,12 +1763,12 @@ main .publica-2 .publica-texto .datos-formulario form div textarea {
 /* Personalizo caja de select */
 main .publica-2 .publica-texto .datos-formulario form .select {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     grid-template-areas: 
     "select1 select1"
     "select2 select2"
     ;
+    width: 95%;
+    margin: 0 auto;
 }
 
 /* Le doy estilo a la caja */
@@ -1768,7 +1791,7 @@ main .publica-2 .publica-texto .datos-formulario form select {
     justify-content: center;
     align-items: center;
     padding: 8px 16px;
-    width: 200px;
+    width: 90%;
     height: 40px;
     background: #FFFFFF;
     border: 1px solid #B1B8BE;
@@ -1785,7 +1808,7 @@ main .publica-2 .publica-texto .datos-formulario form .fecha{
     justify-content: center;
     align-items: center;
     padding: 8px 16px;
-    width: 200px;
+    width: 90%;
     height: 40px;
     background: #FFFFFF;
     border: 1px solid #B1B8BE;
@@ -1992,7 +2015,17 @@ main .publica-2  .publica-texto .datos-formulario button {
         flex-direction: column;
         width: 100%;
         align-items: center;
+    }
+
+    main .publica-2 .publica-texto .datos-formulario form .select .select-caja-1 {
+        width: 100%;
     }   
+
+
+    main .publica-2 .publica-texto .datos-formulario form .select .select-caja-2 {
+        width: 100%;
+    }   
+
 }
 
 
@@ -2408,6 +2441,10 @@ main section .cajas-filtros-maps .caja-filtros {
     user-select: none;
 } 
 
+main section .cajas-filtros-maps h3 {
+    margin: 0px;
+}
+
 /* Segundo filtro/maps */
 
 main section .cajas-filtros-maps .caja-maps {
@@ -2549,6 +2586,7 @@ main .container-pPerdidos .filter-caja .filter-caja-categorias-raza select {
     height: 40px;
     background: #FFFFFF;
     border-radius: 8px;
+    border: 1px solid #B1B8BE;;
 
 }
 
@@ -2654,15 +2692,12 @@ main .cards .apartado-perritos .titulo-caja {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 16px 0px;
 }
 
 main .cards .apartado-perritos .titulo-caja .titulo-caja-migas {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 16px 0px;
-    height: 56px;
 }
 
 main .cards .apartado-perritos .titulo-caja .titulo-caja-migas h3 {
@@ -2692,6 +2727,7 @@ main .cards .apartado-perritos .titulo-caja .titulo-perritos {
     gap: 16px;
     height: 38px;
     width: 100%;
+    margin: 20px 0px 10px 0px;
 }
 
 main .cards .apartado-perritos .titulo-caja .titulo-perritos h1{
@@ -2827,7 +2863,7 @@ main .map {
     width: 100%;
 }
 main .map .caja-mapa {
-    margin: 35% 0px;
+    margin: 90px 0px;
 }
 
 main section .caja-mapa i {
@@ -3157,7 +3193,6 @@ main section .caja-2-pE .card3-texto {
     flex-direction: column;
     align-items: flex-start;
     padding: 24px;
-    gap: 16px;
     width: 90%;
     height: 208px;
     background: #FFFFFF;
@@ -3224,7 +3259,7 @@ main section .caja-2-pE .card1-texto .card-caja .card-caja-texto h4 {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
     display: flex;
     align-items: center;
@@ -3270,6 +3305,7 @@ main section .caja-2-pE .card1-texto .card-caja-3 {
     padding: 16px;
     gap: 16px;
     width: 100%;
+    margin: 0 auto;
     height: 80px;
     background: #FFE4CB;
     border-radius: 24px;
@@ -3327,9 +3363,8 @@ main section .caja-2-pE .card2-texto .card-caja .caja, .caja-fecha {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    gap: 16px;
     width: 100%;
-    height: 132px;
+    height: 102px;
 }
 
 main section .caja-2-pE .card2-texto .card-caja .caja {
@@ -3359,6 +3394,7 @@ main section .caja-2-pE .card2-texto .card-caja .caja h4, .caja-fecha h4 {
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     color: #FFA078;
@@ -3537,6 +3573,7 @@ main .mapa-encontrar #map {
 
     main section .caja-2-pE .card3-texto button {
         height: 35px;
+        margin-top: 20px;
     }
 
     main section .caja-2-pE .card3-texto button a {
@@ -3565,7 +3602,7 @@ main .mapa-encontrar #map {
     
     main section .caja-2-pE .card1-texto {
         width: 85%;
-        height: 40%;
+        height: 45%;
     }
     main section .caja-2-pE .card2-texto {
         width: 90%;
@@ -3606,8 +3643,9 @@ main .mapa-encontrar #map {
     }
 
     main section .caja-2-pE .card1-texto .card-caja-3 {
-        height: 60px;
+        height: 20%;
         width: 85%;
+        margin: 0 auto;
     }
 
     main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h3 {
@@ -3674,6 +3712,7 @@ main .mapa-encontrar #map {
 
 
 @media screen and (max-width:630px){
+
     main section .container-grid-pE {
         width: 95%;
         margin: 0 auto;
@@ -3715,7 +3754,7 @@ main .mapa-encontrar #map {
     /* Cars */
     main section .caja-2-pE .card1-texto {
         width: 100%;
-        height: 40%;
+        height: 45%;
     }
     main section .caja-2-pE .card2-texto {
         width: 100%;
@@ -3728,12 +3767,14 @@ main .mapa-encontrar #map {
     /* Card1 */
 
     main section .caja-2-pE .card1-texto .card-caja-3 {
-        height: 50px;
+        height: 20%;
         width: 100%;
+        margin: 0 auto;
     }
 
     main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h3 {
         font-size: 0.75rem;
+        margin: 0px;
     }
 
     main section .caja-2-pE .card1-texto .card-caja-3 .card-caja-texto h4 {
@@ -3750,9 +3791,6 @@ main .mapa-encontrar #map {
         font-size: 0.7rem;
     }
 
-    main section .caja-2-pE .card2-texto .card-caja .caja h3 {
-        font-size: 0.6rem;
-    }
 
     main section .caja-2-pE .card2-texto .card-caja .caja h4, .caja-fecha h4 {
         font-size: 0.7rem;
@@ -3760,6 +3798,7 @@ main .mapa-encontrar #map {
 
     main section .caja-2-pE .card2-texto .card-caja .caja h5, h3{
         font-size: 0.6rem;
+        margin: 5px 0px;
     }
 
     /******* Card3 ********/
@@ -3773,7 +3812,7 @@ main .mapa-encontrar #map {
     }
 
     main section .caja-2-pE .card1-texto h2, .card2-texto h2, .card3-texto h2 {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
@@ -3796,8 +3835,6 @@ main .mapa-encontrar #map {
     } 
 
 }
-
-
 
 /*********************************** *********************************** *********************************** ***********************************/
 
@@ -4067,8 +4104,8 @@ main .mapa-encontrar #map {
     text-decoration: none;
 }
 
-.container-register .caja-register .google-facebook-caja .caja-button i {
-    font-size: 1rem;
+.container-register .caja-register .google-facebook-caja .caja-button img {
+    margin-right: 20px;
 }
 
 /* texto de iniciar sesion además del de  politica y privacidad */
@@ -4081,6 +4118,7 @@ main .mapa-encontrar #map {
 .container-register .caja-register .datos-seguir-login h4, h5 {
     text-align: center;
     font-size: 1rem;
+    font-family: 'Nunito Sans';
     font-weight: 400;
     margin: 5px 0px;
 }
@@ -4088,6 +4126,7 @@ main .mapa-encontrar #map {
 .container-register .caja-register .datos-seguir-login a {
     text-decoration: none;
     color: #FFA078;
+    font-family: 'Nunito Sans';
 }
 
 
