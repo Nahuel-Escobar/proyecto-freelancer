@@ -263,11 +263,16 @@ main section .btn-ayuda .btn-ayuda-2 {
 @media screen  and (max-width: 960px){
     main section .titulo-texto h1 {
         font-size: 1.3rem;
-        width: 60%;
+        width: 75%;
+        line-height: 30px;
+        height: 50px;
+        margin: 16px 0px;
     }
 
     main section .titulo-texto p {
         font-size: 0.8rem;
+        height: 35px;
+        margin: 20px 0px;
         color: #2F2F2F;
     }
 
@@ -285,10 +290,15 @@ main section .btn-ayuda .btn-ayuda-2 {
 
     main section .titulo-texto h1 {
         font-size: 1rem;
+        line-height: 16px;
+        height: 30px;
+        margin: 16px 0px;
     }
 
     main section .titulo-texto p {
         font-size: 0.8rem;
+        line-height: 16px;
+        height: 30px;
     }
 }
 
@@ -303,17 +313,17 @@ main section .btn-ayuda .btn-ayuda-2 {
     main section .titulo-texto h1 {
         font-size: 0.8rem;
         height: 40px;
+        margin: 16px auto;
     }
 
     main section .titulo-texto p {
         font-size: 0.65rem;
         line-height: 20px;
-        margin: 10px 0px;
+        margin: 16px 0px;
     }
 
     main section .btn-ayuda .btn-ayuda-1 {
         padding: 8px 12px;
-        margin-right: 0px;
     } 
 
     main section .btn-ayuda .btn-ayuda-2 {
@@ -349,13 +359,14 @@ main section .btn-ayuda .btn-ayuda-2 {
 
     main section .titulo-texto h1 {
         font-size: 1.3rem;
+        width: 90%;
         line-height: 20px;
+        height: 35px;
     }
 
     main section .titulo-texto p {
         font-size: 0.85rem;
         line-height: 17px;
-        height: 45px;
     }
 
     main section .btn-ayuda {
