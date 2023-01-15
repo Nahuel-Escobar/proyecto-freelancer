@@ -49,7 +49,6 @@ header nav .bar-btn {
 header nav .nav-menu {
     position: fixed;
     width: 100%;
-    height: 0%;
     top: 9.6vh;
     background-color: #adadadc8;
     z-index: 100;
@@ -157,11 +156,9 @@ header nav #check:checked ~ .nav-menu li {
 /* Estilos al Titulo e imagen */
 main .contenedor-presentacion {
     display: grid;
-    grid-template-areas: 
-    "texto ilustracion"
-    ; 
+    grid-template-areas: "texto ilustracion";
     width: 95%;
-    margin: 0 auto;
+    margin: 30px auto;
     align-items: center;
 }
 
@@ -245,7 +242,6 @@ main section .btn-ayuda .btn-ayuda-2 {
 }
 
 @media screen  and (max-width: 1024px){
-    
     main section .titulo-texto {
         width: 100%;
     }
@@ -287,6 +283,10 @@ main section .btn-ayuda .btn-ayuda-2 {
 }
 
 @media screen  and (max-width: 780px){
+
+    main .contenedor-presentacion {
+        margin: 20px auto;
+    }
 
     main section .titulo-texto h1 {
         font-size: 1rem;
@@ -466,8 +466,6 @@ main .carrousel h2 {
     background-color: white;
     color: #000 !important;
     border-radius: 50px;
-    height: 50px !important;
-    width: 50px !important;
 }
 
 .swiper-button-prev {
@@ -476,6 +474,32 @@ main .carrousel h2 {
     color: #000 !important;
     height: 50px !important;
     width: 50px !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color,var(--swiper-theme-color));
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: 'next';
+    font-size: 1.5rem !important;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: 'prev';
+    font-size: 1.5rem !important;
 }
 
 /* Responsive  Carousel*/
@@ -527,6 +551,7 @@ main .banner .banner-text-box {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px 20px;
+    justify-content: center;
     gap: 32px;
 }
 
@@ -749,10 +774,11 @@ main .banner-2 .banner-email{
     grid-area: text2;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     padding: 0px;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 main .banner-2 .banner-email .banner-text h3 {
@@ -761,7 +787,7 @@ main .banner-2 .banner-email .banner-text h3 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 38px;
     color: #2F2F2F;
 }
@@ -829,14 +855,12 @@ main .banner-2 .banner-email .banner-btn .send {
     }
     
     main .banner-2 .banner-email .banner-text p {
-        font-size: 1.5rem;
         margin-top: 5%;
         line-height: 32px;
     }
     
     main .banner-2 .banner-email .banner-btn {
         width: 90%;
-        margin-top: 5%;
     }
     /*Boton enviar */
 }
@@ -1016,6 +1040,7 @@ footer .caja-2 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    text-align: left;
 }
 
 footer .publicar h2 a{
@@ -1142,6 +1167,7 @@ footer .legal p a {
         "legal2 legal2"
         ;
         flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -3439,6 +3465,7 @@ main section .caja-2-pE .card3-texto .card-caja .card-phone, .card-email{
     gap: 16px;
     width: 384px;
     height: 24px;
+    margin-top: 10px;
 }
 
 main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
@@ -3465,6 +3492,7 @@ main section .caja-2-pE .card3-texto button {
     width: 100%;
     height: 48px;
     background: #FFA078;
+    margin-top: 10%;
     border: 2px solid #2F2F2F;
     box-shadow: 0px 2px 8px -24px rgba(15, 16, 139, 0.1);
     border-radius: 16px;
@@ -3546,7 +3574,6 @@ main .mapa-encontrar #map {
 
     main section .caja-2-pE .card1-texto .card-caja-3 {
         height: 60px;
-        width: 85%;
         margin: 0 auto;
     }
 
@@ -3569,7 +3596,7 @@ main .mapa-encontrar #map {
     }
 
     main section .caja-2-pE .card2-texto .card-caja .caja h4, .caja-fecha h4 {
-        font-size: 0.8rem;
+        font-size: 1-1rem;
     }
 
     main section .caja-2-pE .card2-texto .card-caja .caja h5, h3{
@@ -3583,8 +3610,7 @@ main .mapa-encontrar #map {
     }
 
     main section .caja-2-pE .card3-texto button {
-        height: 35px;
-        margin-top: 20px;
+        margin-top: 12%;
     }
 
     main section .caja-2-pE .card3-texto button a {
@@ -3655,7 +3681,6 @@ main .mapa-encontrar #map {
 
     main section .caja-2-pE .card1-texto .card-caja-3 {
         height: 20%;
-        width: 85%;
         margin: 0 auto;
     }
 
@@ -3685,6 +3710,10 @@ main .mapa-encontrar #map {
         font-size: 0.7rem;
     }
 
+    main section .caja-2-pE .card3-texto button {
+        margin-top: 13%;
+    }
+
     /******* Card3 ********/
 
     main section .caja-2-pE .card3-texto .card-caja {
@@ -3697,14 +3726,6 @@ main .mapa-encontrar #map {
 
     main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
         width: 344px;
-        font-size: 0.8rem;
-    }
-
-    main section .caja-2-pE .card3-texto button {
-        height: 40px;
-    }
-
-    main section .caja-2-pE .card3-texto button a {
         font-size: 0.8rem;
     }
 
@@ -3829,14 +3850,6 @@ main .mapa-encontrar #map {
     main section .caja-2-pE .card3-texto .card-caja .card-phone h3, .card-email h3{
         width: 100%;
         font-size: 0.7rem;
-    }
-
-    main section .caja-2-pE .card3-texto button {
-        height: 40px;
-    }
-
-    main section .caja-2-pE .card3-texto button a {
-        font-size: 0.8rem;
     }
 
     main section .caja-1pE .caja-pP img {
